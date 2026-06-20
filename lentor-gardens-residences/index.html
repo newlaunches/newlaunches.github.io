@@ -548,7 +548,7 @@ footer{border-top:1px solid rgba(216,184,120,.22)}
 </div>
 
 <script>
-var SB_URL="https://fnwixchhnonmsoxtsntu.supabase.co",SB_KEY="sb_publishable_e_1fT6HAAmsopEY31rVgOw_f8zJCro_",PROJECT="Lentor Gardens Residences";
+var SB_URL="https://fnwixchhnonmsoxtsntu.supabase.co",SB_KEY="sb_publishable_e_1fT6HAAmsopEY31rVgOw_f8zJCro_",PROJECT="Lentor Gardens Residences",W3F_KEY="";
 
 /* ---- floor plan data (verified off the developer's plans) ---- */
 var UNITS=[
@@ -663,6 +663,7 @@ document.getElementById('rsubmit').addEventListener('click',function(){
   var name=document.getElementById('rname').value.trim(),phone=document.getElementById('rphone').value.trim(),unit=document.getElementById('runit').value;
   if(!name||!phone){alert('Please enter your name and mobile number.');return;}
   var b=this;b.textContent='Sending…';b.disabled=true;
+  if(W3F_KEY){fetch('https://api.web3forms.com/submit',{method:'POST',headers:{'Content-Type':'application/json',Accept:'application/json'},body:JSON.stringify({access_key:W3F_KEY,subject:'New VVIP registration — '+PROJECT,from_name:PROJECT,name:name,phone:phone,unit_interest:unit||'Any',project:PROJECT})}).catch(function(){});}
   fetch(SB_URL+'/rest/v1/launch_leads',{method:'POST',headers:{'apikey':SB_KEY,'Authorization':'Bearer '+SB_KEY,'Content-Type':'application/json','Prefer':'return=minimal'},body:JSON.stringify({project:PROJECT,name:name,phone:phone,unit_interest:unit||null})}).then(done).catch(done);
   function done(){document.getElementById('regform').style.display='none';document.getElementById('regok').style.display='block';}
 });

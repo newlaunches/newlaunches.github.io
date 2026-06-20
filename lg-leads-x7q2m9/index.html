@@ -5,6 +5,7 @@
 <meta name="viewport" content="width=device-width, initial-scale=1">
 <meta name="robots" content="noindex,nofollow">
 <title>Lead Tracker</title>
+<link rel="icon" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 32 32'%3E%3Crect width='32' height='32' rx='7' fill='%2313241c'/%3E%3Cpath d='M16 6l8 7v13h-5v-7h-6v7H8V13z' fill='%23d8b878'/%3E%3C/svg%3E">
 <link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:wght@600;700&family=Plus+Jakarta+Sans:wght@400;500;600;700;800&display=swap" rel="stylesheet">
 <style>
 :root{--deep:#13241c;--deep2:#0d1813;--gold:#d8b878;--gold2:#a9802f;--cream:#f7f3ea;--line:rgba(255,255,255,.12);--mut:#9a9482}
@@ -13,33 +14,28 @@ body{font-family:'Plus Jakarta Sans',system-ui,sans-serif;background:linear-grad
 .serif{font-family:'Cormorant Garamond',serif}
 a{color:var(--gold)}
 .wrap{max-width:1040px;margin:0 auto;padding:26px 20px 80px}
-/* gate */
 .gate{min-height:100vh;display:grid;place-items:center;padding:24px}
-.gatebox{width:100%;max-width:420px;background:rgba(255,255,255,.05);border:1px solid var(--line);border-radius:20px;padding:32px}
-.gatebox h1{font-family:'Cormorant Garamond',serif;font-size:34px;font-weight:700}
+.gatebox{width:100%;max-width:380px;background:rgba(255,255,255,.05);border:1px solid var(--line);border-radius:20px;padding:34px;text-align:center}
 .gatebox .ey{font-size:11px;font-weight:800;letter-spacing:.22em;text-transform:uppercase;color:var(--gold)}
-.gatebox p{color:var(--mut);font-size:13px;margin:8px 0 18px;line-height:1.5}
-input{width:100%;background:rgba(0,0,0,.25);border:1px solid var(--line);border-radius:11px;padding:13px 14px;font-size:15px;font-family:inherit;color:#fff;margin-bottom:12px}
+.gatebox h1{font-family:'Cormorant Garamond',serif;font-size:36px;font-weight:700;margin:4px 0 4px}
+.gatebox p{color:var(--mut);font-size:13px;margin-bottom:20px}
+input{width:100%;background:rgba(0,0,0,.25);border:1px solid var(--line);border-radius:11px;padding:14px;font-size:16px;font-family:inherit;color:#fff;text-align:center;letter-spacing:.1em;margin-bottom:12px}
 input:focus{outline:0;border-color:var(--gold)}
-.btn{display:inline-flex;align-items:center;justify-content:center;gap:7px;border:0;border-radius:30px;padding:12px 20px;font-size:14px;font-weight:700;font-family:inherit;cursor:pointer;background:linear-gradient(135deg,var(--gold),var(--gold2));color:#241803;transition:.18s}
-.btn:hover{transform:translateY(-1px)}
-.btn.ghost{background:rgba(255,255,255,.1);color:#fff}
-.err{color:#ff9b8a;font-size:13px;margin-top:8px;min-height:18px}
-/* dashboard */
+.btn{display:inline-flex;align-items:center;justify-content:center;gap:7px;border:0;border-radius:30px;padding:13px 20px;font-size:14px;font-weight:700;font-family:inherit;cursor:pointer;background:linear-gradient(135deg,var(--gold),var(--gold2));color:#241803;transition:.18s}
+.btn:hover{transform:translateY(-1px)}.btn.ghost{background:rgba(255,255,255,.1);color:#fff}
+.err{color:#ff9b8a;font-size:13px;margin-top:6px;min-height:18px}
 .hidden{display:none}
 .top{display:flex;align-items:center;gap:14px;flex-wrap:wrap;margin-bottom:22px}
 .top h1{font-family:'Cormorant Garamond',serif;font-size:32px;font-weight:700;line-height:1}
 .top .ey{font-size:10.5px;font-weight:800;letter-spacing:.2em;text-transform:uppercase;color:var(--gold)}
 .count{background:rgba(216,184,120,.15);border:1px solid rgba(216,184,120,.4);color:var(--gold);font-weight:800;font-size:13px;padding:6px 13px;border-radius:30px}
-.actions{margin-left:auto;display:flex;gap:9px;flex-wrap:wrap}
-.actions .btn{padding:10px 16px;font-size:13px}
+.actions{margin-left:auto;display:flex;gap:9px;flex-wrap:wrap}.actions .btn{padding:10px 16px;font-size:13px}
 .tablewrap{border:1px solid var(--line);border-radius:16px;overflow:hidden;background:rgba(255,255,255,.03)}
 table{width:100%;border-collapse:collapse;font-size:14px}
 th{text-align:left;font-size:10.5px;font-weight:800;letter-spacing:.1em;text-transform:uppercase;color:var(--gold);padding:14px 16px;background:rgba(0,0,0,.2);white-space:nowrap}
 td{padding:13px 16px;border-top:1px solid var(--line);vertical-align:top}
 tr:hover td{background:rgba(255,255,255,.03)}
-td.name{font-weight:700;color:#fff}
-td.phone a{color:var(--gold);font-weight:700;text-decoration:none}
+td.name{font-weight:700;color:#fff}td.phone a{color:var(--gold);font-weight:700;text-decoration:none}
 td.unit{color:#cabfa9}td.time{color:var(--mut);font-size:12.5px;white-space:nowrap}
 .empty{text-align:center;color:var(--mut);padding:48px 20px;font-size:15px}
 .note{color:var(--mut);font-size:12px;margin-top:14px;text-align:center}
@@ -48,30 +44,25 @@ td.unit{color:#cabfa9}td.time{color:var(--mut);font-size:12.5px;white-space:nowr
 </head>
 <body>
 
-<!-- GATE -->
 <div class="gate" id="gate">
   <div class="gatebox">
     <div class="ey">Private</div>
     <h1 class="serif">Lead Tracker</h1>
-    <p>Paste your Supabase <b>secret API key</b> (starts with <code>sb_secret_</code> or the service_role key). It's stored only in this browser — never on the page.</p>
-    <input id="keyin" type="password" placeholder="sb_secret_… or service_role key" autocomplete="off">
+    <p>Enter password to view leads.</p>
+    <input id="pwin" type="password" inputmode="numeric" placeholder="Password" autocomplete="off">
     <button class="btn" id="unlock" style="width:100%">Unlock →</button>
     <div class="err" id="gateerr"></div>
   </div>
 </div>
 
-<!-- DASHBOARD -->
 <div class="wrap hidden" id="dash">
   <div class="top">
-    <div>
-      <div class="ey">New Launch Leads</div>
-      <h1 class="serif">Lead Tracker</h1>
-    </div>
+    <div><div class="ey">New Launch Leads</div><h1 class="serif">Lead Tracker</h1></div>
     <span class="count" id="count">—</span>
     <div class="actions">
       <button class="btn ghost" id="refresh">↻ Refresh</button>
       <button class="btn ghost" id="csv">⬇ CSV</button>
-      <button class="btn ghost" id="signout">Sign out</button>
+      <button class="btn ghost" id="signout">Lock</button>
     </div>
   </div>
   <div class="tablewrap">
@@ -81,41 +72,48 @@ td.unit{color:#cabfa9}td.time{color:var(--mut);font-size:12.5px;white-space:nowr
     </table>
   </div>
   <div class="empty hidden" id="empty">No leads yet — they'll appear here the moment someone registers.</div>
-  <div class="note">Reads live from Supabase · key stored locally only · <a href="#" id="signout2">sign out</a></div>
+  <div class="note">Reads live from Supabase · <a href="#" id="lock2">lock</a></div>
 </div>
 
 <script>
 var SB_URL="https://fnwixchhnonmsoxtsntu.supabase.co";
-var KEY_STORE="lg_sb_key";
+var ANON="sb_publishable_e_1fT6HAAmsopEY31rVgOw_f8zJCro_";
+var PW_STORE="lg_pw";
 var leads=[];
 
-function getKey(){return localStorage.getItem(KEY_STORE)||"";}
 function show(dash){document.getElementById('gate').classList.toggle('hidden',dash);document.getElementById('dash').classList.toggle('hidden',!dash);}
 function esc(s){return (s==null?"":String(s)).replace(/[&<>"]/g,function(c){return{'&':'&amp;','<':'&lt;','>':'&gt;','"':'&quot;'}[c];});}
 function fmt(t){if(!t)return"—";var d=new Date(t);if(isNaN(d))return esc(t);return d.toLocaleString('en-SG',{day:'2-digit',month:'short',hour:'2-digit',minute:'2-digit'});}
 
-function load(){
-  var key=getKey();if(!key){show(false);return;}
-  var url=SB_URL+"/rest/v1/launch_leads?select=*&order=created_at.desc";
-  fetch(url,{headers:{apikey:key,Authorization:"Bearer "+key}})
-    .then(function(r){
-      if(r.status===401||r.status===403){throw new Error("auth");}
-      if(!r.ok){ // maybe no created_at column — retry unordered
-        return fetch(SB_URL+"/rest/v1/launch_leads?select=*",{headers:{apikey:key,Authorization:"Bearer "+key}}).then(function(r2){if(!r2.ok)throw new Error("req");return r2.json();});
-      }
-      return r.json();
-    })
-    .then(function(data){leads=Array.isArray(data)?data:[];render();show(true);})
-    .catch(function(e){
-      if(e.message==="auth"){localStorage.removeItem(KEY_STORE);show(false);document.getElementById('gateerr').textContent="That key was rejected — check it's the secret / service_role key.";}
-      else{show(true);document.getElementById('rows').innerHTML="";document.getElementById('empty').classList.remove('hidden');document.getElementById('empty').textContent="Couldn't load leads. Check your connection or key, then Refresh.";}
-    });
+function fetchLeads(pw){
+  return fetch(SB_URL+"/rest/v1/rpc/get_leads",{
+    method:"POST",
+    headers:{apikey:ANON,Authorization:"Bearer "+ANON,"Content-Type":"application/json"},
+    body:JSON.stringify({pw:pw})
+  }).then(function(r){
+    if(r.status===404){throw new Error("setup");}      // function not created yet
+    if(!r.ok){throw new Error("pw");}                    // wrong password (function raises)
+    return r.json();
+  });
+}
+
+function open(pw,fromSaved){
+  fetchLeads(pw).then(function(data){
+    leads=Array.isArray(data)?data:[];
+    leads.sort(function(a,b){return new Date(b.created_at||b.inserted_at||0)-new Date(a.created_at||a.inserted_at||0);});
+    localStorage.setItem(PW_STORE,pw);render();show(true);
+  }).catch(function(e){
+    localStorage.removeItem(PW_STORE);show(false);
+    document.getElementById('gateerr').textContent = e.message==="setup"
+      ? "Setup not finished — run the Supabase SQL once, then try again."
+      : (fromSaved?"":"Wrong password.");
+  });
 }
 
 function render(){
   document.getElementById('count').textContent=leads.length+" lead"+(leads.length===1?"":"s");
   var tb=document.getElementById('rows'),empty=document.getElementById('empty');
-  if(!leads.length){tb.innerHTML="";empty.classList.remove('hidden');empty.textContent="No leads yet — they'll appear here the moment someone registers.";return;}
+  if(!leads.length){tb.innerHTML="";empty.classList.remove('hidden');return;}
   empty.classList.add('hidden');
   tb.innerHTML=leads.map(function(l){
     var ph=esc(l.phone||"");
@@ -135,18 +133,19 @@ function toCsv(){
 }
 
 document.getElementById('unlock').addEventListener('click',function(){
-  var k=document.getElementById('keyin').value.trim();
-  if(!k){document.getElementById('gateerr').textContent="Paste your key first.";return;}
-  localStorage.setItem(KEY_STORE,k);document.getElementById('gateerr').textContent="";load();
+  var pw=document.getElementById('pwin').value.trim();
+  if(!pw){document.getElementById('gateerr').textContent="Enter the password.";return;}
+  document.getElementById('gateerr').textContent="";open(pw,false);
 });
-document.getElementById('keyin').addEventListener('keydown',function(e){if(e.key==='Enter')document.getElementById('unlock').click();});
-document.getElementById('refresh').addEventListener('click',load);
+document.getElementById('pwin').addEventListener('keydown',function(e){if(e.key==='Enter')document.getElementById('unlock').click();});
+document.getElementById('refresh').addEventListener('click',function(){var pw=localStorage.getItem(PW_STORE);if(pw)open(pw,true);});
 document.getElementById('csv').addEventListener('click',toCsv);
-function signout(){localStorage.removeItem(KEY_STORE);leads=[];show(false);document.getElementById('keyin').value="";}
-document.getElementById('signout').addEventListener('click',signout);
-document.getElementById('signout2').addEventListener('click',function(e){e.preventDefault();signout();});
+function lock(){localStorage.removeItem(PW_STORE);leads=[];show(false);document.getElementById('pwin').value="";}
+document.getElementById('signout').addEventListener('click',lock);
+document.getElementById('lock2').addEventListener('click',function(e){e.preventDefault();lock();});
 
-load();
+var saved=localStorage.getItem(PW_STORE);
+if(saved)open(saved,true);else show(false);
 </script>
 </body>
 </html>
