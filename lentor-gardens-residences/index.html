@@ -91,7 +91,7 @@ body::after{content:"";position:fixed;inset:0;z-index:9998;pointer-events:none;o
 
 /* SECTIONS */
 section{position:relative}
-.sec{padding:106px 0}
+.sec{padding:80px 0}
 .sec.alt{background:var(--card);border-top:1px solid var(--line);border-bottom:1px solid var(--line)}
 .sec.dark{background:linear-gradient(165deg,var(--deep),var(--deep2));color:#f0e8d6}
 .phead{max-width:60ch}
@@ -248,9 +248,13 @@ footer .fbrand{font-family:'Cormorant Garamond',serif;font-size:24px;color:#f0e8
 @media(max-width:680px){
   .nav{display:none}.burger{display:flex}
   .wrap{padding:0 20px}
-  .sec{padding:74px 0}
-  .hero{padding-bottom:60px}
-  .hero .bg{background-position:center 32%}
+  .sec{padding:60px 0}
+  /* mobile hero: show the WHOLE render uncropped at top, content on dark-green below */
+  .hero{display:block;min-height:0;align-items:initial;padding:0 0 44px;background:linear-gradient(180deg,#172a20,var(--deep2))}
+  .hero .bg{position:relative;inset:auto;z-index:1;width:100%;height:auto;aspect-ratio:1646/682;background-size:cover;background-position:center;box-shadow:0 14px 30px rgba(0,0,0,.4)}
+  .hero::after{display:none}
+  .hero .wrap{padding-top:30px}
+  .scrollcue{display:none}
   .hstats{flex-wrap:wrap;margin-top:34px}
   .hst{flex:1 0 50%;border-bottom:1px solid rgba(255,255,255,.14)}
   .hst:nth-child(2){border-right:0}
@@ -274,7 +278,7 @@ footer .fbrand{font-family:'Cormorant Garamond',serif;font-size:24px;color:#f0e8
     <a class="lnk" href="#highlights">Highlights</a>
     <a class="lnk" href="#gallery">Gallery</a>
     <a class="lnk" href="#siteplan">Site Plan</a>
-    <a class="lnk" href="#residences">Residences</a>
+    <a class="lnk" href="#residences">Floor Plans</a>
     <a class="lnk" href="#location">Location</a>
     <a class="btn btn-g" href="#register">VVIP Preview</a>
   </nav>
@@ -286,7 +290,7 @@ footer .fbrand{font-family:'Cormorant Garamond',serif;font-size:24px;color:#f0e8
   <a href="#highlights">Highlights</a>
   <a href="#gallery">Gallery</a>
   <a href="#siteplan">Site Plan</a>
-  <a href="#residences">Residences</a>
+  <a href="#residences">Floor Plans</a>
   <a href="#location">Location</a>
   <a href="#value">Why Lentor Gardens</a>
   <a class="btn btn-g" href="#register">Register for VVIP</a>
@@ -381,8 +385,8 @@ footer .fbrand{font-family:'Cormorant Garamond',serif;font-size:24px;color:#f0e8
       <div class="gt big" data-src="media/gal-hero.jpg" data-cap="Aerial across the development"><span class="aimark">Artist's Impression</span><img src="media/gal-hero.jpg" alt="Aerial view" loading="lazy"><span class="cap">Aerial across the development</span></div>
       <div class="gt" data-src="media/gal-pool.jpg" data-cap="50m lap pool &amp; deck"><span class="aimark">Artist's Impression</span><img src="media/gal-pool.jpg" alt="Pool" loading="lazy"><span class="cap">The 50m pool</span></div>
       <div class="gt" data-src="media/gal-strata.jpg" data-cap="Strata terrace homes at dusk"><span class="aimark">Artist's Impression</span><img src="media/gal-strata.jpg" alt="Strata terraces" loading="lazy"><span class="cap">Strata terraces</span></div>
-      <div class="gt wide" data-src="media/gal-pool-night.jpg" data-cap="The water landscape by night"><span class="aimark">Artist's Impression</span><img src="media/gal-pool-night.jpg" alt="Pool at night" loading="lazy"><span class="cap">Pool by night</span></div>
-      <div class="gt wide" data-src="media/gal-night.jpg" data-cap="The development at twilight"><span class="aimark">Artist's Impression</span><img src="media/gal-night.jpg" alt="Twilight" loading="lazy"><span class="cap">Twilight view</span></div>
+      <div class="gt" data-src="media/gal-pool-night.jpg" data-cap="The water landscape by night"><span class="aimark">Artist's Impression</span><img src="media/gal-pool-night.jpg" alt="Pool at night" loading="lazy"><span class="cap">Pool by night</span></div>
+      <div class="gt" data-src="media/gal-night.jpg" data-cap="The development at twilight"><span class="aimark">Artist's Impression</span><img src="media/gal-night.jpg" alt="Twilight" loading="lazy"><span class="cap">Twilight view</span></div>
     </div>
   </div>
 </section>
