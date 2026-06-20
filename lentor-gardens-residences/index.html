@@ -37,8 +37,11 @@ body::after{content:"";position:fixed;inset:0;z-index:9998;pointer-events:none;o
   background-image:url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='180' height='180'%3E%3Cfilter id='n'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='.8' numOctaves='2'/%3E%3C/filter%3E%3Crect width='100%25' height='100%25' filter='url(%23n)'/%3E%3C/svg%3E")}
 
 .btn{display:inline-flex;align-items:center;justify-content:center;gap:8px;font-weight:700;border-radius:40px;padding:14px 26px;font-size:14.5px;cursor:pointer;border:0;transition:.22s;white-space:nowrap;font-family:inherit}
-.btn-g{background:linear-gradient(135deg,var(--gold2),var(--gold));color:#241803;box-shadow:0 12px 30px rgba(169,128,47,.4)}
+.btn-g{background:linear-gradient(135deg,var(--gold2),var(--gold));color:#241803;box-shadow:0 12px 30px rgba(169,128,47,.4);position:relative;overflow:hidden}
 .btn-g:hover{transform:translateY(-2px);box-shadow:0 16px 38px rgba(169,128,47,.5)}
+.btn-g::after{content:"";position:absolute;top:0;left:-85%;width:55%;height:100%;background:linear-gradient(100deg,transparent,rgba(255,255,255,.5),transparent);transform:skewX(-18deg);pointer-events:none}
+.btn-g:hover::after{animation:sheen .85s ease}
+@keyframes sheen{from{left:-85%}to{left:145%}}
 .btn-wa{background:#25d366;color:#fff}.btn-wa:hover{transform:translateY(-2px)}
 .btn-o{background:rgba(255,255,255,.07);border:1.5px solid rgba(255,255,255,.55);color:#fff;backdrop-filter:blur(6px)}
 .btn-o:hover{background:rgba(255,255,255,.16)}
@@ -77,8 +80,10 @@ body::after{content:"";position:fixed;inset:0;z-index:9998;pointer-events:none;o
 .mnav-contact a.mwa{background:#25d366}
 
 /* HERO */
-.hero{position:relative;min-height:100svh;display:flex;align-items:flex-end;color:#fff;overflow:hidden;padding:0 0 70px}
-.hero .bg{position:absolute;inset:0;z-index:-2;background:#0d1813 url(media/gal-hero.jpg) center 38%/cover no-repeat}
+.hero{position:relative;min-height:100svh;display:flex;align-items:center;color:#fff;overflow:hidden;padding:calc(var(--pbh) + 98px) 0 74px}
+.hero .bg{position:absolute;inset:0;z-index:-2;background:#0d1813 url(media/gal-hero.jpg) center 38%/cover no-repeat;animation:kenburns 30s ease-in-out infinite alternate;will-change:transform}
+@keyframes kenburns{from{transform:scale(1)}to{transform:scale(1.09)}}
+@media(prefers-reduced-motion:reduce){.hero .bg{animation:none}}
 .hero::after{content:"";position:absolute;inset:0;z-index:-1;background:
   linear-gradient(180deg,rgba(8,14,10,.5) 0%,rgba(8,14,10,.05) 26%,rgba(8,14,10,.12) 54%,rgba(8,14,10,.78) 100%)}
 .hero .wrap{width:100%}
@@ -290,7 +295,7 @@ footer .fbrand{font-family:'Cormorant Garamond',serif;font-size:24px;color:#f0e8
   .pbar{font-size:12px;gap:9px;padding:8px 40px 8px 16px}.pbar .pbgo{padding:5px 12px}
   /* mobile hero: show the WHOLE render uncropped at top, content on dark-green below */
   .hero{display:block;min-height:0;align-items:initial;padding:calc(var(--pbh) + 54px) 0 44px;background:linear-gradient(180deg,#172a20,var(--deep2))}
-  .hero .bg{position:relative;inset:auto;z-index:1;width:100%;height:auto;aspect-ratio:1646/682;background-size:cover;background-position:center;box-shadow:0 14px 30px rgba(0,0,0,.4)}
+  .hero .bg{position:relative;inset:auto;z-index:1;width:100%;height:auto;aspect-ratio:1646/682;background-size:cover;background-position:center;box-shadow:0 14px 30px rgba(0,0,0,.4);animation:none}
   .hero::after{display:none}
   .hero .wrap{padding-top:30px}
   .scrollcue{display:none}
@@ -306,6 +311,26 @@ footer .fbrand{font-family:'Cormorant Garamond',serif;font-size:24px;color:#f0e8
   .lb .lbn{width:40px;height:40px}.lb .prev{left:8px}.lb .next{right:8px}
 }
 @media(max-width:380px){.hsv{font-size:24px}.fgrid{grid-template-columns:1fr 1fr}}
+
+/* ===== aesthetic polish ===== */
+/* garden divider motif under centred section titles */
+.phead.ctr::before{content:"";display:block;width:64px;height:14px;margin:0 auto 18px;opacity:.95;
+  background:url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='64' height='14' viewBox='0 0 64 14'%3E%3Cg fill='none' stroke='%23c8a86a' stroke-width='1.2'%3E%3Cline x1='0' y1='7' x2='23' y2='7'/%3E%3Cline x1='41' y1='7' x2='64' y2='7'/%3E%3C/g%3E%3Cpath d='M32 1.4 C36 4.4 36 9.6 32 12.6 C28 9.6 28 4.4 32 1.4 Z' fill='%23c8a86a'/%3E%3C/svg%3E") center/contain no-repeat}
+/* short gold rule above left-aligned section titles */
+.phead:not(.ctr)::before{content:"";display:block;width:48px;height:2px;border-radius:2px;margin-bottom:18px;background:linear-gradient(90deg,var(--gold),transparent)}
+/* stat cells: gentle interactive lift */
+.sb{transition:background .25s}
+.sb:hover{background:rgba(216,184,120,.06)}
+.statband{border-top-color:rgba(216,184,120,.4)}
+/* footer refinement */
+footer{border-top:1px solid rgba(216,184,120,.22)}
+.fmono{width:48px;height:48px;margin:0 auto 16px;border:1px solid rgba(216,184,120,.45);border-radius:50%;display:grid;place-items:center;font-family:'Cormorant Garamond',serif;color:var(--gold2);font-size:20px;font-weight:700;letter-spacing:.04em}
+.fcontact{margin:9px 0 20px;color:#a89e8b;font-size:13px}
+.fcontact a{color:var(--gold2);font-weight:700}
+.fdiv{width:100%;max-width:340px;height:1px;background:linear-gradient(90deg,transparent,rgba(216,184,120,.3),transparent);margin:0 auto 18px}
+.addr{display:inline-flex;align-items:center;gap:8px;margin-top:18px;font-size:15px;font-weight:700;color:var(--ink);background:var(--card);border:1px solid var(--line);border-radius:30px;padding:11px 20px;box-shadow:var(--shadow2);transition:.2s}
+.addr:hover{border-color:var(--gold);transform:translateY(-1px)}
+.faddr{color:#c9c0ad;font-weight:700;margin-bottom:6px}
 </style>
 </head>
 <body>
@@ -536,7 +561,8 @@ footer .fbrand{font-family:'Cormorant Garamond',serif;font-size:24px;color:#f0e8
 <section class="sec alt" id="location">
   <div class="wrap">
     <div class="phead rv"><div class="eyebrow">The address</div><h2 class="serif">Connected, green, grounded</h2>
-      <p>About six minutes on foot to Lentor MRT through Hillock Park — with top schools and nature all around.</p></div>
+      <p>About six minutes on foot to Lentor MRT through Hillock Park — with top schools and nature all around.</p>
+      <a class="addr" href="https://www.google.com/maps/search/?api=1&query=66+Lentor+Gardens+Singapore" target="_blank" rel="noopener">📍 66 – 78 Lentor Gardens · Singapore · District 26</a></div>
     <div class="loc">
       <div class="rv d1">
         <div class="locmap" data-src="media/gal-walkpath.jpg" data-cap="Lentor Gardens Residences — ~6 min walk to Lentor MRT via Hillock Park"><img src="media/gal-walkpath.jpg" alt="Connectivity map" loading="lazy"><span class="z" style="position:absolute;bottom:12px;right:12px;background:rgba(13,24,19,.82);color:#fff;font-size:11px;font-weight:700;padding:7px 13px;border-radius:30px">⤢ Enlarge</span></div>
@@ -620,11 +646,14 @@ footer .fbrand{font-family:'Cormorant Garamond',serif;font-size:24px;color:#f0e8
 
 <footer>
   <div class="wrap">
+    <div class="fmono serif">LG</div>
     <div class="fbrand serif">Lentor Gardens Residences</div>
-    By <b>Kingsford Development</b> · designed by P&amp;T Consultants · 99-year leasehold · District 26 · Lentor Gardens<br>
+    <div class="faddr">📍 66 – 78 Lentor Gardens · District 26 · Singapore</div>
+    <div class="fcontact">Marketed by <b>Kiwi Lim</b> · PropNex Realty · <a href="tel:+6593864036">9386 4036</a></div>
+    <div class="fdiv"></div>
+    By <b>Kingsford Development</b> · designed by P&amp;T Consultants · 99-year leasehold · District 26<br>
     The team behind Normanton Park, Kingsford Waterbay &amp; Kingsford Hillview Peak.<br><br>
-    All images are artist's impressions. Information is indicative and subject to change — pricing, unit mix, sizes, facilities &amp; TOP to be confirmed by the developer. This is not an offer or contract.<br>
-    Marketed by <b>Kiwi Lim · PropNex Realty</b>.
+    All images are artist's impressions. Information is indicative and subject to change — pricing, unit mix, sizes, facilities &amp; TOP to be confirmed by the developer. This is not an offer or contract.
   </div>
 </footer>
 
