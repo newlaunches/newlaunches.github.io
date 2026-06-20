@@ -59,6 +59,10 @@ a{color:inherit;text-decoration:none}
   radial-gradient(820px 480px at 78% 12%,rgba(210,171,99,.30),transparent 58%),
   radial-gradient(700px 620px at 6% 92%,rgba(44,84,70,.55),transparent 55%)}
 .contour{position:absolute;inset:0;z-index:-2;opacity:.16;background-image:radial-gradient(circle at 80% 20%,transparent 0,transparent 38%,rgba(210,171,99,.5) 38.4%,transparent 39%),radial-gradient(circle at 80% 20%,transparent 0,transparent 48%,rgba(210,171,99,.4) 48.4%,transparent 49%),radial-gradient(circle at 80% 20%,transparent 0,transparent 58%,rgba(210,171,99,.3) 58.4%,transparent 59%),radial-gradient(circle at 80% 20%,transparent 0,transparent 70%,rgba(210,171,99,.25) 70.4%,transparent 71%)}
+.skyline{position:absolute;left:0;right:0;bottom:0;width:100%;height:230px;z-index:-1;pointer-events:none;opacity:.9}
+@keyframes up{from{opacity:0;transform:translateY(20px)}to{opacity:1;transform:none}}
+.hero .eyebrow,.hero h1,.hero .tag,.hero .cta-row,.hero .statrow,.hero .book{animation:up .85s cubic-bezier(.2,.7,.2,1) both}
+.hero h1{animation-delay:.08s}.hero .tag{animation-delay:.18s}.hero .cta-row{animation-delay:.28s}.hero .statrow{animation-delay:.38s}.hero .book{animation-delay:.48s}
 .hero .eyebrow{margin-bottom:20px}
 .hero h1{font-family:'Cormorant Garamond',serif;font-weight:700;font-size:clamp(46px,8vw,86px);line-height:.98;letter-spacing:-.025em;max-width:13ch}
 .hero .tag{font-family:'Cormorant Garamond',serif;font-style:italic;font-size:clamp(20px,3.4vw,28px);color:#ecdcbd;margin:18px 0 30px;max-width:32ch}
@@ -104,7 +108,10 @@ a{color:inherit;text-decoration:none}
 .ut{font-family:'Cormorant Garamond',serif;font-size:21px;font-weight:600}
 .un{font-size:12.5px;color:var(--ink2);margin-top:2px}
 .galrow{display:grid;grid-template-columns:repeat(3,1fr);gap:12px;margin-top:30px}
-.gtile{aspect-ratio:4/3;border-radius:14px;display:grid;place-items:center;color:rgba(255,255,255,.6);font-size:11.5px;text-align:center;padding:12px}
+.gtile{aspect-ratio:4/3;border-radius:14px;display:grid;place-items:center;color:rgba(255,255,255,.72);font-size:11.5px;text-align:center;padding:12px;position:relative;overflow:hidden}
+.gal-feat::before,.gtile::before{content:"";position:absolute;top:0;left:-65%;width:55%;height:100%;background:linear-gradient(100deg,transparent,rgba(255,255,255,.16),transparent);animation:shim 4.5s ease-in-out infinite;z-index:1;pointer-events:none}
+@keyframes shim{0%{left:-65%}55%,100%{left:135%}}
+.gico{font-size:24px;opacity:.85;margin-bottom:6px}.gtile span{position:relative;z-index:2}
 .gtile:nth-child(1){background:linear-gradient(135deg,var(--green),var(--deep))}
 .gtile:nth-child(2){background:linear-gradient(135deg,var(--gold2),var(--gold))}
 .gtile:nth-child(3){background:linear-gradient(135deg,#3a4a44,#14110b)}
@@ -181,6 +188,26 @@ footer b{color:#bcae97}
 <section class="panel on" id="t-overview">
   <div class="hero">
     <div class="contour"></div>
+    <svg class="skyline" viewBox="0 0 1200 230" preserveAspectRatio="xMidYMax slice" aria-hidden="true">
+      <defs><linearGradient id="glow" x1="0" y1="0" x2="0" y2="1"><stop offset="0" stop-color="#d2ab63" stop-opacity=".22"/><stop offset="1" stop-color="#d2ab63" stop-opacity="0"/></linearGradient></defs>
+      <ellipse cx="600" cy="230" rx="640" ry="150" fill="url(#glow)"/>
+      <g fill="#0d1611" opacity=".82">
+        <rect x="92" y="74" width="40" height="156" rx="3"/><rect x="142" y="110" width="30" height="120" rx="3"/>
+        <rect x="996" y="52" width="46" height="178" rx="3"/><rect x="1052" y="96" width="34" height="134" rx="3"/><rect x="1096" y="124" width="26" height="106" rx="3"/>
+      </g>
+      <g fill="#d2ab63" opacity=".5">
+        <rect x="102" y="88" width="6" height="6"/><rect x="116" y="88" width="6" height="6"/><rect x="102" y="104" width="6" height="6"/><rect x="116" y="104" width="6" height="6"/><rect x="102" y="120" width="6" height="6"/><rect x="116" y="120" width="6" height="6"/>
+        <rect x="1006" y="68" width="6" height="6"/><rect x="1022" y="68" width="6" height="6"/><rect x="1006" y="86" width="6" height="6"/><rect x="1022" y="86" width="6" height="6"/><rect x="1006" y="104" width="6" height="6"/><rect x="1022" y="104" width="6" height="6"/>
+      </g>
+      <g fill="#0a120d">
+        <path d="M0 230 V196 q40-46 80 0 q44-54 90 0 q40-44 84 0 V230Z"/>
+        <ellipse cx="300" cy="206" rx="46" ry="40"/><rect x="296" y="200" width="8" height="30"/>
+        <ellipse cx="430" cy="214" rx="38" ry="32"/><rect x="426" y="208" width="7" height="22"/>
+        <ellipse cx="770" cy="210" rx="48" ry="42"/><rect x="766" y="204" width="8" height="26"/>
+        <ellipse cx="900" cy="216" rx="36" ry="30"/><rect x="896" y="210" width="7" height="20"/>
+        <path d="M1200 230 V198 q-40-44-86 0 q-44-50-92 0 V230Z"/>
+      </g>
+    </svg>
     <div class="wrap">
       <div class="eyebrow">New Launch · District 26 · Lentor</div>
       <h1 class="serif">Lentor Gardens Residences</h1>
@@ -230,7 +257,7 @@ footer b{color:#bcae97}
     <div class="phead"><div class="eyebrow">The development</div><h2 class="serif">499 homes by Kingsford</h2>
       <p>4 blocks · three 16-storey towers + one 8-storey block · ≈ 222,000 sqft site.</p></div>
     <div class="resgrid">
-      <div class="gal-feat"><span>Artist's impression<br>released at preview</span></div>
+      <div class="gal-feat"><span><span class="gico">🏙️</span><br>Artist's impression<br><span style="opacity:.7">released at preview</span></span></div>
       <div>
         <div class="eyebrow" style="color:var(--ink2)">Facilities</div>
         <div class="chips"><span class="chip">50m lap pool</span><span class="chip">Fully-equipped gym</span><span class="chip">Childcare centre</span><span class="chip">3 retail shops</span><span class="chip">Lush landscaped grounds</span><span class="chip">Sky &amp; social spaces</span></div>
@@ -238,7 +265,11 @@ footer b{color:#bcae97}
         <div class="ugrid" style="margin-top:14px"><div class="ucard"><div class="ut">2-Bedroom</div><div class="un">Efficient layouts — ideal first home or rental</div></div><div class="ucard"><div class="ut">3-Bedroom</div><div class="un">The family sweet spot in Lentor</div></div><div class="ucard"><div class="ut">4-Bedroom</div><div class="un">Generous family living</div></div><div class="ucard"><div class="ut">5-BR / Strata Terrace</div><div class="un">Rare landed-style homes within a condo</div></div></div>
       </div>
     </div>
-    <div class="galrow"><div class="gtile">Showflat<br>preview soon</div><div class="gtile">Facilities deck<br>preview soon</div><div class="gtile">Skyline view<br>preview soon</div></div>
+    <div class="galrow">
+      <div class="gtile"><span><span class="gico">🛋️</span><br>Showflat<br><span style="opacity:.7">preview soon</span></span></div>
+      <div class="gtile"><span><span class="gico">🏊</span><br>Facilities deck<br><span style="opacity:.7">preview soon</span></span></div>
+      <div class="gtile"><span><span class="gico">🌆</span><br>Skyline view<br><span style="opacity:.7">preview soon</span></span></div>
+    </div>
   </div>
 </section>
 
