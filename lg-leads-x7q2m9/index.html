@@ -5,7 +5,7 @@
 <meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
 <meta name="robots" content="noindex,nofollow">
 <title>Lead Tracker</title>
-<link rel="icon" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 32 32'%3E%3Crect width='32' height='32' rx='7' fill='%2313241c'/%3E%3Cpath d='M16 6l8 7v13h-5v-7h-6v7H8V13z' fill='%23d8b878'/%3E%3C/svg%3E">
+<link rel="icon" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 32 32'%3E%3Crect width='32' height='32' rx='7' fill='%2313241c'/%3E%3Cg fill='%23d8b878'%3E%3Crect x='6' y='17' width='5' height='9' rx='1'/%3E%3Crect x='13.5' y='12' width='5' height='14' rx='1'/%3E%3Crect x='21' y='7' width='5' height='19' rx='1'/%3E%3C/g%3E%3C/svg%3E">
 <meta name="theme-color" content="#13241c">
 <link rel="manifest" href="manifest.webmanifest">
 <link rel="apple-touch-icon" href="apple-touch-icon.png">
@@ -15,7 +15,7 @@
 <meta name="apple-mobile-web-app-title" content="Leads">
 <link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:wght@600;700&family=Plus+Jakarta+Sans:wght@400;500;600;700;800&display=swap" rel="stylesheet">
 <style>
-:root{--deep:#13241c;--deep2:#0a120d;--gold:#d8b878;--gold2:#a9802f;--cream:#f7f3ea;--line:rgba(255,255,255,.1);--mut:#9a9482;--card:rgba(255,255,255,.045)}
+:root{--deep:#13241c;--deep2:#0a120d;--gold:#d8b878;--gold2:#a9802f;--cream:#f7f3ea;--line:rgba(255,255,255,.1);--mut:#9a9482;--green:#3ec07a}
 *{box-sizing:border-box;margin:0}
 html{-webkit-text-size-adjust:100%}
 body{font-family:'Plus Jakarta Sans',system-ui,sans-serif;color:var(--cream);line-height:1.5;-webkit-font-smoothing:antialiased;min-height:100vh;
@@ -24,35 +24,35 @@ body{font-family:'Plus Jakarta Sans',system-ui,sans-serif;color:var(--cream);lin
 .serif{font-family:'Cormorant Garamond',serif}
 a{color:var(--gold)}
 img{display:block;max-width:100%}
-.wrap{max-width:1060px;margin:0 auto;padding:24px 18px 90px}
+.wrap{max-width:1080px;margin:0 auto;padding:24px 18px 90px}
 .hidden{display:none!important}
-.btn{display:inline-flex;align-items:center;justify-content:center;gap:7px;border:0;border-radius:30px;padding:13px 20px;font-size:14px;font-weight:700;font-family:inherit;cursor:pointer;background:linear-gradient(135deg,var(--gold),var(--gold2));color:#241803;transition:.18s;white-space:nowrap}
+.btn{display:inline-flex;align-items:center;justify-content:center;gap:7px;border:0;border-radius:30px;padding:12px 18px;font-size:13.5px;font-weight:700;font-family:inherit;cursor:pointer;background:linear-gradient(135deg,var(--gold),var(--gold2));color:#241803;transition:.18s;white-space:nowrap}
 .btn:hover{transform:translateY(-1px);box-shadow:0 8px 22px rgba(216,184,120,.28)}
 .btn.ghost{background:rgba(255,255,255,.08);color:#fff;border:1px solid var(--line)}
 .btn.ghost:hover{background:rgba(255,255,255,.14);box-shadow:none}
 
 /* GATE */
 .gate{min-height:100vh;display:grid;place-items:center;padding:24px}
-.gatebox{width:100%;max-width:390px;background:var(--card);border:1px solid var(--line);border-radius:24px;padding:38px 32px 30px;text-align:center;box-shadow:0 30px 80px rgba(0,0,0,.4)}
+.gatebox{width:100%;max-width:390px;background:rgba(255,255,255,.045);border:1px solid var(--line);border-radius:24px;padding:38px 32px 30px;text-align:center;box-shadow:0 30px 80px rgba(0,0,0,.4)}
 .logo{width:84px;height:84px;border-radius:21px;margin:0 auto 18px;box-shadow:0 12px 30px rgba(0,0,0,.45),0 0 0 1px rgba(216,184,120,.25)}
 .gatebox .ey{font-size:11px;font-weight:800;letter-spacing:.24em;text-transform:uppercase;color:var(--gold)}
 .gatebox h1{font-family:'Cormorant Garamond',serif;font-size:38px;font-weight:700;margin:2px 0 4px;line-height:1}
 .gatebox p{color:var(--mut);font-size:13px;margin-bottom:20px}
-input{width:100%;background:rgba(0,0,0,.3);border:1px solid var(--line);border-radius:13px;padding:15px;font-size:17px;font-family:inherit;color:#fff;text-align:center;letter-spacing:.12em}
+input{width:100%;background:rgba(0,0,0,.3);border:1px solid var(--line);border-radius:13px;padding:14px;font-size:16px;font-family:inherit;color:#fff}
 input:focus{outline:0;border-color:var(--gold)}
+#pwin{text-align:center;letter-spacing:.12em;font-size:17px}
 .gatebox .btn{width:100%;margin-top:12px;padding:15px}
 .err{color:#ff9b8a;font-size:13px;margin-top:8px;min-height:18px}
 .installcard{display:flex;align-items:center;gap:13px;width:100%;margin-top:22px;background:linear-gradient(135deg,rgba(216,184,120,.2),rgba(216,184,120,.07));border:1px solid rgba(216,184,120,.5);border-radius:16px;padding:15px 16px;cursor:pointer;font-family:inherit;text-align:left;color:var(--cream);transition:.18s;animation:ipulse 2.6s ease-in-out infinite}
-.installcard:hover{transform:translateY(-1px);border-color:var(--gold);background:linear-gradient(135deg,rgba(216,184,120,.28),rgba(216,184,120,.1))}
+.installcard:hover{transform:translateY(-1px);border-color:var(--gold)}
 .installcard .ic-emoji{font-size:25px;flex:none}
 .installcard .ic-txt{flex:1;display:flex;flex-direction:column;line-height:1.2}
-.installcard .ic-txt b{font-size:14.5px;color:#fff}
-.installcard .ic-txt small{font-size:12px;color:#cabfa9;margin-top:2px}
+.installcard .ic-txt b{font-size:14.5px;color:#fff}.installcard .ic-txt small{font-size:12px;color:#cabfa9;margin-top:2px}
 .installcard .ic-arrow{color:var(--gold);font-weight:800;font-size:18px}
 @keyframes ipulse{0%,100%{box-shadow:0 0 0 0 rgba(216,184,120,0)}50%{box-shadow:0 0 0 5px rgba(216,184,120,.12)}}
 
 /* DASHBOARD */
-.top{display:flex;align-items:center;gap:14px;flex-wrap:wrap;margin-bottom:24px}
+.top{display:flex;align-items:center;gap:14px;flex-wrap:wrap;margin-bottom:18px}
 .brand{display:flex;align-items:center;gap:13px}
 .brand img{width:46px;height:46px;border-radius:13px;box-shadow:0 6px 16px rgba(0,0,0,.4)}
 .brand .ey{font-size:10px;font-weight:800;letter-spacing:.2em;text-transform:uppercase;color:var(--gold)}
@@ -60,28 +60,52 @@ input:focus{outline:0;border-color:var(--gold)}
 .count{background:rgba(216,184,120,.14);border:1px solid rgba(216,184,120,.4);color:var(--gold);font-weight:800;font-size:13px;padding:7px 14px;border-radius:30px}
 .actions{margin-left:auto;display:flex;gap:8px;flex-wrap:wrap}
 .actions .btn{padding:10px 15px;font-size:12.5px}
+
+/* toolbar */
+.toolbar{display:flex;align-items:center;gap:12px;flex-wrap:wrap;margin-bottom:16px}
+.pchips{display:flex;gap:8px;overflow-x:auto;flex:1;min-width:0;padding-bottom:2px;scrollbar-width:none}
+.pchips::-webkit-scrollbar{display:none}
+.pchip{background:rgba(255,255,255,.06);border:1px solid var(--line);color:#cabfa9;border-radius:30px;padding:9px 15px;font-size:13px;font-weight:700;cursor:pointer;white-space:nowrap;font-family:inherit;transition:.15s}
+.pchip:hover{border-color:var(--gold)}
+.pchip.on{background:linear-gradient(135deg,var(--gold),var(--gold2));color:#241803;border-color:transparent}
+.pchip b{font-weight:800;opacity:.7;margin-left:3px}
+.searchwrap{position:relative;flex:none}
+#search{width:200px;background:rgba(0,0,0,.28);border:1px solid var(--line);border-radius:30px;padding:10px 14px 10px 36px;font-size:14px;color:#fff}
+.searchwrap::before{content:"🔍";position:absolute;left:13px;top:50%;transform:translateY(-50%);font-size:13px;opacity:.6}
+.newtgl{background:rgba(216,184,120,.12);border:1px solid rgba(216,184,120,.4);color:var(--gold);border-radius:30px;padding:10px 15px;font-size:13px;font-weight:700;cursor:pointer;font-family:inherit;white-space:nowrap}
+.newtgl.on{background:linear-gradient(135deg,var(--gold),var(--gold2));color:#241803;border-color:transparent}
+
 .tablewrap{border:1px solid var(--line);border-radius:18px;overflow:hidden;background:rgba(255,255,255,.025);box-shadow:0 20px 50px rgba(0,0,0,.28)}
 table{width:100%;border-collapse:collapse;font-size:14px}
-th{text-align:left;font-size:10px;font-weight:800;letter-spacing:.12em;text-transform:uppercase;color:var(--gold);padding:15px 18px;background:rgba(0,0,0,.25);white-space:nowrap}
-td{padding:14px 18px;border-top:1px solid var(--line);vertical-align:middle}
+th{text-align:left;font-size:10px;font-weight:800;letter-spacing:.12em;text-transform:uppercase;color:var(--gold);padding:14px 16px;background:rgba(0,0,0,.25);white-space:nowrap}
+td{padding:13px 16px;border-top:1px solid var(--line);vertical-align:middle}
 tbody tr{transition:.15s}tbody tr:hover td{background:rgba(216,184,120,.05)}
+tbody tr.done td{opacity:.5}
 .who{display:flex;align-items:center;gap:12px}
 .av{width:38px;height:38px;border-radius:50%;flex:none;display:grid;place-items:center;font-family:'Cormorant Garamond',serif;font-weight:700;font-size:16px;color:#241803;background:linear-gradient(140deg,#f0d79a,#c8a86a)}
-.who .nm{font-weight:700;color:#fff}
+.nm{font-weight:700;color:#fff;display:flex;align-items:center;gap:7px;flex-wrap:wrap}
+.prj{font-size:12px;color:var(--mut);margin-top:1px}
+.meta{display:none}
+.tag{font-size:9.5px;font-weight:800;letter-spacing:.05em;text-transform:uppercase;padding:2px 7px;border-radius:20px}
+.tag.new{background:rgba(216,184,120,.2);color:var(--gold);border:1px solid rgba(216,184,120,.45)}
+.tag.dup{background:rgba(255,150,90,.16);color:#ffb27a;border:1px solid rgba(255,150,90,.4)}
 td.phone a{color:var(--gold);font-weight:700;text-decoration:none}
 .uchip{display:inline-block;background:rgba(255,255,255,.07);border:1px solid var(--line);border-radius:20px;padding:4px 11px;font-size:12px;color:#cabfa9;font-weight:600}
 td.time{color:var(--mut);font-size:12.5px;white-space:nowrap}
-td.del{text-align:right;width:1%}
-.delbtn{background:rgba(255,90,70,.12);border:1px solid rgba(255,90,70,.28);color:#ff9b8a;width:30px;height:30px;border-radius:9px;cursor:pointer;font-size:13px;line-height:1}
-.delbtn:hover{background:rgba(255,90,70,.26)}
-.empty{text-align:center;padding:60px 24px}
+td.acts{text-align:right;white-space:nowrap}
+.acts .ab{width:32px;height:32px;border-radius:9px;cursor:pointer;font-size:13px;line-height:1;border:1px solid var(--line);background:rgba(255,255,255,.06);color:#fff;margin-left:5px;vertical-align:middle}
+.ab.wa{background:rgba(37,211,102,.16);border-color:rgba(37,211,102,.4);color:#5ee893;text-decoration:none;display:inline-grid;place-items:center}
+.ab.wa:hover{background:rgba(37,211,102,.3)}
+.ab.ct:hover{background:rgba(62,192,122,.2)}
+.ab.ct.on{background:rgba(62,192,122,.22);border-color:rgba(62,192,122,.5);color:#5ee893}
+.ab.del{color:#ff9b8a}.ab.del:hover{background:rgba(255,90,70,.2)}
+.empty{text-align:center;padding:56px 24px}
 .empty .big{font-size:42px;margin-bottom:10px}
 .empty h3{font-family:'Cormorant Garamond',serif;font-size:26px;font-weight:600;color:#fff}
 .empty p{color:var(--mut);font-size:14px;margin-top:6px}
-.note{color:var(--mut);font-size:12px;margin-top:16px;text-align:center}
-.note a{cursor:pointer}
+.note{color:var(--mut);font-size:12px;margin-top:16px;text-align:center}.note a{cursor:pointer}
 
-/* INSTALL GUIDE MODAL */
+/* INSTALL GUIDE */
 .modal{position:fixed;inset:0;z-index:50;background:rgba(6,10,7,.82);backdrop-filter:blur(8px);display:none;align-items:flex-start;justify-content:center;overflow-y:auto;padding:24px 16px}
 .modal.open{display:flex}
 .modalbox{width:100%;max-width:480px;background:linear-gradient(170deg,#1b3326,#0c1610);border:1px solid rgba(216,184,120,.25);border-radius:24px;padding:32px 28px;margin:auto;box-shadow:0 40px 100px rgba(0,0,0,.6)}
@@ -93,24 +117,25 @@ td.del{text-align:right;width:1%}
 .mhead p{color:#c3bba8;font-size:13.5px;margin-top:8px}
 .feats{display:grid;grid-template-columns:1fr 1fr;gap:10px;margin:0 0 24px}
 .feat{background:rgba(255,255,255,.05);border:1px solid var(--line);border-radius:13px;padding:13px 14px}
-.feat .fi{font-size:19px}
-.feat b{display:block;font-size:13px;margin:5px 0 2px;color:#fff}
-.feat span{font-size:11.5px;color:var(--mut);line-height:1.4}
-.steps .seg{display:inline-flex;gap:6px;margin-bottom:14px}
+.feat .fi{font-size:19px}.feat b{display:block;font-size:13px;margin:5px 0 2px;color:#fff}.feat span{font-size:11.5px;color:var(--mut);line-height:1.4}
+.seg{display:inline-flex;gap:6px;margin-bottom:14px}
 .segbtn{background:rgba(255,255,255,.08);border:1px solid var(--line);color:#cabfa9;font-family:inherit;font-weight:700;font-size:13px;padding:8px 16px;border-radius:30px;cursor:pointer}
 .segbtn.on{background:linear-gradient(135deg,var(--gold),var(--gold2));color:#241803;border-color:transparent}
 .steplist{counter-reset:s;list-style:none;padding:0;margin:0}
 .steplist li{counter-increment:s;position:relative;padding:11px 0 11px 44px;border-bottom:1px solid var(--line);font-size:14px;color:#e8e0cf;line-height:1.5}
 .steplist li:last-child{border-bottom:0}
 .steplist li::before{content:counter(s);position:absolute;left:0;top:9px;width:28px;height:28px;border-radius:50%;background:rgba(216,184,120,.16);border:1px solid rgba(216,184,120,.4);color:var(--gold);font-weight:800;font-size:13px;display:grid;place-items:center}
-.steplist b{color:#fff}
-.modalbox .btn{width:100%;margin-top:22px}
+.steplist b{color:#fff}.modalbox .btn{width:100%;margin-top:22px}
 
-@media(max-width:560px){
+@media(max-width:620px){
   .wrap{padding:18px 12px 90px}
-  td.proj,th.proj{display:none}
+  .brand h1{font-size:25px}
+  #search{width:140px}
   .feats{grid-template-columns:1fr}
-  .brand h1{font-size:26px}
+  td,th{padding:11px 12px}
+  td.acts .ab{width:30px;height:30px;margin-left:4px}
+  th:nth-child(3),td:nth-child(3),th:nth-child(4),td:nth-child(4){display:none}
+  .meta{display:block;font-size:11.5px;color:var(--mut);margin-top:3px}
 }
 </style>
 </head>
@@ -119,7 +144,7 @@ td.del{text-align:right;width:1%}
 <!-- GATE -->
 <div class="gate" id="gate">
   <div class="gatebox">
-    <img class="logo" src="icon-192.png" alt="Lead Tracker">
+    <img class="logo" src="icon-192.png" alt="Leads">
     <div class="ey">Private</div>
     <h1 class="serif">Lead Tracker</h1>
     <p>Enter password to view your leads.</p>
@@ -137,10 +162,7 @@ td.del{text-align:right;width:1%}
 <!-- DASHBOARD -->
 <div class="wrap hidden" id="dash">
   <div class="top">
-    <div class="brand">
-      <img src="icon-192.png" alt="">
-      <div><div class="ey">New Launch Leads</div><h1 class="serif">Lead Tracker</h1></div>
-    </div>
+    <div class="brand"><img src="icon-192.png" alt=""><div><div class="ey">All Projects</div><h1 class="serif">Lead Tracker</h1></div></div>
     <span class="count" id="count">—</span>
     <div class="actions">
       <button class="btn ghost" id="refresh">↻ Refresh</button>
@@ -149,17 +171,19 @@ td.del{text-align:right;width:1%}
       <button class="btn ghost" id="signout">Lock</button>
     </div>
   </div>
+  <div class="toolbar">
+    <div class="pchips" id="pchips"></div>
+    <div class="searchwrap"><input id="search" placeholder="Search name / phone"></div>
+    <button class="newtgl" id="newtgl">● New only</button>
+  </div>
   <div class="tablewrap" id="tablewrap">
     <table>
-      <thead><tr><th>Lead</th><th>Mobile</th><th>Interested in</th><th class="proj">Project</th><th>When</th><th></th></tr></thead>
+      <thead><tr><th>Lead</th><th>Mobile</th><th>Interested in</th><th>When</th><th></th></tr></thead>
       <tbody id="rows"></tbody>
     </table>
   </div>
-  <div class="empty hidden" id="empty">
-    <div class="big">🌱</div><h3>No leads yet</h3>
-    <p>They'll appear here the moment someone registers on the site.</p>
-  </div>
-  <div class="note">Live from your registration form · <a id="installLink2">install as app</a> · <a id="lock2">lock</a></div>
+  <div class="empty hidden" id="empty"></div>
+  <div class="note">Live from your registration forms · auto-refreshes · <a id="installLink2">install as app</a> · <a id="lock2">lock</a></div>
 </div>
 
 <!-- INSTALL GUIDE -->
@@ -167,35 +191,33 @@ td.del{text-align:right;width:1%}
   <div class="modalbox">
     <button class="mx" id="guideClose">×</button>
     <div class="mhead">
-      <img src="icon-192.png" alt="Lead Tracker">
+      <img src="icon-192.png" alt="Leads">
       <div class="ey">Your private app</div>
       <h2 class="serif">Put your leads on your home screen</h2>
       <p>Add it once — then it opens like a real app, fullscreen, every lead at your fingertips.</p>
     </div>
     <div class="feats">
-      <div class="feat"><div class="fi">🔔</div><b>Every lead, instantly</b><span>New registrations show up live — no logging into anything.</span></div>
+      <div class="feat"><div class="fi">🔔</div><b>Every lead, instantly</b><span>New registrations show up live — across all your projects.</span></div>
       <div class="feat"><div class="fi">🔒</div><b>Private &amp; password-locked</b><span>Only you can open it. Your leads stay yours.</span></div>
       <div class="feat"><div class="fi">⚡</div><b>Feels like a real app</b><span>Fullscreen icon on your home screen, opens instantly.</span></div>
-      <div class="feat"><div class="fi">📞</div><b>Tap to call · export</b><span>One tap to dial a lead, or download the whole list as CSV.</span></div>
+      <div class="feat"><div class="fi">📞</div><b>Call · WhatsApp · export</b><span>One tap to reach a lead, or download the list as CSV.</span></div>
     </div>
-    <div class="steps">
-      <div class="seg">
-        <button class="segbtn on" data-os="ios">iPhone</button>
-        <button class="segbtn" data-os="and">Android</button>
-      </div>
-      <ol class="steplist" id="stepsIos">
-        <li>Open this page in <b>Safari</b> (not Chrome).</li>
-        <li>Tap the <b>Share</b> button — the square with an ↑ arrow.</li>
-        <li>Scroll down and tap <b>“Add to Home Screen”</b>.</li>
-        <li>Tap <b>Add</b> — the gold <b>Leads</b> icon appears on your home screen. 🎉</li>
-      </ol>
-      <ol class="steplist hidden" id="stepsAnd">
-        <li>Open this page in <b>Chrome</b>.</li>
-        <li>Tap the <b>⋮</b> menu (top-right).</li>
-        <li>Tap <b>“Add to Home screen”</b> / <b>“Install app”</b>.</li>
-        <li>Tap <b>Add</b> — the <b>Leads</b> app icon appears. 🎉</li>
-      </ol>
+    <div class="seg">
+      <button class="segbtn on" data-os="ios">iPhone</button>
+      <button class="segbtn" data-os="and">Android</button>
     </div>
+    <ol class="steplist" id="stepsIos">
+      <li>Open this page in <b>Safari</b> (not Chrome).</li>
+      <li>Tap the <b>Share</b> button — the square with an ↑ arrow.</li>
+      <li>Scroll down and tap <b>“Add to Home Screen”</b>.</li>
+      <li>Tap <b>Add</b> — the gold <b>Leads</b> icon appears on your home screen. 🎉</li>
+    </ol>
+    <ol class="steplist hidden" id="stepsAnd">
+      <li>Open this page in <b>Chrome</b>.</li>
+      <li>Tap the <b>⋮</b> menu (top-right).</li>
+      <li>Tap <b>“Add to Home screen”</b> / <b>“Install app”</b>.</li>
+      <li>Tap <b>Add</b> — the <b>Leads</b> app icon appears. 🎉</li>
+    </ol>
     <button class="btn" id="guideGot">Got it</button>
   </div>
 </div>
@@ -204,104 +226,162 @@ td.del{text-align:right;width:1%}
 var SB_URL="https://fnwixchhnonmsoxtsntu.supabase.co";
 var ANON="sb_publishable_e_1fT6HAAmsopEY31rVgOw_f8zJCro_";
 var PW_STORE="lg_pw";
-var leads=[],currentPw="";
+var leads=[],currentPw="",fProject="all",fSearch="",fNew=false,dupPhones={};
+var prevView=+(localStorage.getItem('lg_lastview')||0);
+localStorage.setItem('lg_lastview',Date.now());
+var setContactedAvailable=true;
 
-function show(dash){document.getElementById('gate').classList.toggle('hidden',dash);document.getElementById('dash').classList.toggle('hidden',!dash);}
+function show(d){document.getElementById('gate').classList.toggle('hidden',d);document.getElementById('dash').classList.toggle('hidden',!d);}
 function esc(s){return (s==null?"":String(s)).replace(/[&<>"]/g,function(c){return{'&':'&amp;','<':'&lt;','>':'&gt;','"':'&quot;'}[c];});}
 function initials(n){var p=(n||'?').trim().split(/\s+/);return (((p[0]||'')[0]||'?')+((p[1]||'')[0]||'')).toUpperCase();}
+function tms(l){return new Date(l.created_at||l.inserted_at||0).getTime();}
 function ago(t){if(!t)return"—";var d=new Date(t);if(isNaN(d))return esc(t);var s=(Date.now()-d.getTime())/1000;
   if(s<60)return"just now";if(s<3600)return Math.floor(s/60)+"m ago";if(s<86400)return Math.floor(s/3600)+"h ago";
   if(s<604800)return Math.floor(s/86400)+"d ago";return d.toLocaleDateString('en-SG',{day:'2-digit',month:'short'});}
+function waNum(ph){var d=(ph||'').replace(/[^0-9]/g,'');if(d.length===8)d='65'+d;return d;}
 
-function fetchLeads(pw){
-  return fetch(SB_URL+"/rest/v1/rpc/get_leads",{method:"POST",
-    headers:{apikey:ANON,Authorization:"Bearer "+ANON,"Content-Type":"application/json"},
-    body:JSON.stringify({pw:pw})
-  }).then(function(r){if(r.status===404)throw new Error("setup");if(!r.ok)throw new Error("pw");return r.json();});
-}
-function open(pw,fromSaved){
-  fetchLeads(pw).then(function(data){
+function api(fn,body){return fetch(SB_URL+"/rest/v1/rpc/"+fn,{method:"POST",
+  headers:{apikey:ANON,Authorization:"Bearer "+ANON,"Content-Type":"application/json"},body:JSON.stringify(body)});}
+
+function load(pw,fromSaved){
+  api("get_leads",{pw:pw}).then(function(r){if(r.status===404)throw new Error("setup");if(!r.ok)throw new Error("pw");return r.json();})
+  .then(function(data){
     leads=Array.isArray(data)?data:[];
-    leads.sort(function(a,b){return new Date(b.created_at||b.inserted_at||0)-new Date(a.created_at||a.inserted_at||0);});
-    currentPw=pw;localStorage.setItem(PW_STORE,pw);render();show(true);
+    leads.sort(function(a,b){return tms(b)-tms(a);});
+    currentPw=pw;localStorage.setItem(PW_STORE,pw);
+    recompute();render();show(true);
   }).catch(function(e){
     localStorage.removeItem(PW_STORE);show(false);
     document.getElementById('gateerr').textContent = e.message==="setup"
-      ? "Setup not finished — run the Supabase SQL once, then try again."
-      : (fromSaved?"":"Wrong password.");
+      ? "Setup not finished — run the Supabase SQL once, then try again." : (fromSaved?"":"Wrong password.");
+  });
+}
+function silentRefresh(){
+  if(!currentPw)return;
+  api("get_leads",{pw:currentPw}).then(function(r){return r.ok?r.json():null;}).then(function(data){
+    if(!data)return;leads=data;leads.sort(function(a,b){return tms(b)-tms(a);});recompute();render();
+  }).catch(function(){});
+}
+function recompute(){
+  var pc={};dupPhones={};
+  leads.forEach(function(l){var d=(l.phone||'').replace(/[^0-9]/g,'');if(d){pc[d]=(pc[d]||0)+1;}});
+  Object.keys(pc).forEach(function(k){if(pc[k]>1)dupPhones[k]=true;});
+}
+
+function projectList(){
+  var m={};leads.forEach(function(l){var p=l.project||'—';m[p]=(m[p]||0)+1;});
+  return Object.keys(m).sort().map(function(p){return {p:p,n:m[p]};});
+}
+function chips(){
+  var box=document.getElementById('pchips'),pl=projectList();
+  var h='<button class="pchip'+(fProject==='all'?' on':'')+'" data-p="all">All <b>'+leads.length+'</b></button>';
+  pl.forEach(function(x){h+='<button class="pchip'+(fProject===x.p?' on':'')+'" data-p="'+esc(x.p)+'">'+esc(x.p)+' <b>'+x.n+'</b></button>';});
+  box.innerHTML=h;
+}
+function viewLeads(){
+  var q=fSearch.toLowerCase();
+  return leads.filter(function(l){
+    if(fProject!=='all'&&(l.project||'—')!==fProject)return false;
+    if(fNew&&!(tms(l)>prevView))return false;
+    if(q){var hay=((l.name||'')+' '+(l.phone||'')).toLowerCase();if(hay.indexOf(q)<0)return false;}
+    return true;
   });
 }
 function render(){
-  document.getElementById('count').textContent=leads.length+" lead"+(leads.length===1?"":"s");
-  var tb=document.getElementById('rows'),empty=document.getElementById('empty'),tw=document.getElementById('tablewrap');
-  if(!leads.length){tb.innerHTML="";empty.classList.remove('hidden');tw.classList.add('hidden');return;}
+  chips();
+  var view=viewLeads(),tb=document.getElementById('rows'),empty=document.getElementById('empty'),tw=document.getElementById('tablewrap');
+  var newCount=leads.filter(function(l){return tms(l)>prevView;}).length;
+  document.getElementById('count').innerHTML=leads.length+" lead"+(leads.length===1?"":"s")+(newCount?' · <span style="color:#fff">'+newCount+' new</span>':'');
+  document.getElementById('newtgl').classList.toggle('on',fNew);
+  if(!view.length){
+    tw.classList.add('hidden');empty.classList.remove('hidden');
+    empty.innerHTML = leads.length
+      ? '<div class="big">🔍</div><h3>No leads match</h3><p>Try a different project, search, or turn off “New only”.</p>'
+      : '<div class="big">🌱</div><h3>No leads yet</h3><p>They’ll appear here the moment someone registers on a site.</p>';
+    return;
+  }
   empty.classList.add('hidden');tw.classList.remove('hidden');
-  tb.innerHTML=leads.map(function(l){
-    var ph=esc(l.phone||"");
-    return "<tr><td><div class='who'><div class='av'>"+esc(initials(l.name))+"</div><div class='nm'>"+esc(l.name||"—")+"</div></div></td>"+
-      "<td class='phone'>"+(ph?"<a href='tel:"+ph.replace(/[^0-9+]/g,'')+"'>"+ph+"</a>":"—")+"</td>"+
+  tb.innerHTML=view.map(function(l){
+    var ph=esc(l.phone||""),dig=(l.phone||'').replace(/[^0-9]/g,'');
+    var isNew=tms(l)>prevView,isDup=dupPhones[dig],done=!!l.contacted;
+    var wamsg=encodeURIComponent("Hi "+(l.name||'')+", thank you for registering your interest in "+(l.project||'our project')+".");
+    return "<tr class='"+(done?'done':'')+"' data-id='"+esc(l.id)+"'>"+
+      "<td><div class='who'><div class='av'>"+esc(initials(l.name))+"</div><div>"+
+        "<div class='nm'>"+esc(l.name||"—")+(isNew?"<span class='tag new'>New</span>":"")+(isDup?"<span class='tag dup'>Dup</span>":"")+"</div>"+
+        "<div class='prj'>"+esc(l.project||"—")+"</div>"+
+        "<div class='meta'>"+esc(l.unit_interest||"Any unit")+" · "+ago(l.created_at||l.inserted_at)+"</div></div></div></td>"+
+      "<td class='phone'>"+(ph?"<a href='tel:"+dig+"'>"+ph+"</a>":"—")+"</td>"+
       "<td><span class='uchip'>"+esc(l.unit_interest||"Any unit")+"</span></td>"+
-      "<td class='proj'>"+esc(l.project||"—")+"</td>"+
       "<td class='time'>"+ago(l.created_at||l.inserted_at)+"</td>"+
-      "<td class='del'><button class='delbtn' data-id='"+esc(l.id)+"' title='Delete lead'>✕</button></td></tr>";
+      "<td class='acts'>"+
+        (dig?"<a class='ab wa' href='https://wa.me/"+waNum(l.phone)+"?text="+wamsg+"' target='_blank' rel='noopener' title='WhatsApp'>✆</a>":"")+
+        "<button class='ab ct"+(done?' on':'')+"' data-act='ct' data-id='"+esc(l.id)+"' data-val='"+(done?0:1)+"' title='"+(done?'Contacted':'Mark contacted')+"'>✓</button>"+
+        "<button class='ab del' data-act='del' data-id='"+esc(l.id)+"' title='Delete'>✕</button>"+
+      "</td></tr>";
   }).join("");
 }
+
 function toCsv(){
-  var head=["Name","Mobile","Interested in","Project","When"];
-  var rows=leads.map(function(l){return [l.name,l.phone,l.unit_interest||"Any",l.project,(l.created_at||l.inserted_at||"")];});
+  var view=viewLeads();
+  var head=["Name","Mobile","Interested in","Project","Contacted","When"];
+  var rows=view.map(function(l){return [l.name,l.phone,l.unit_interest||"Any",l.project,(l.contacted?"Yes":"No"),(l.created_at||l.inserted_at||"")];});
   var all=[head].concat(rows).map(function(r){return r.map(function(c){return '"'+String(c==null?"":c).replace(/"/g,'""')+'"';}).join(",");}).join("\r\n");
   var a=document.createElement('a');a.href="data:text/csv;charset=utf-8,"+encodeURIComponent(all);a.download="leads.csv";a.click();
 }
 
+/* row actions: contacted toggle + delete */
+document.getElementById('rows').addEventListener('click',function(e){
+  var b=e.target.closest&&e.target.closest('[data-act]');if(!b)return;
+  var id=b.getAttribute('data-id'),act=b.getAttribute('data-act');
+  if(act==='del'){
+    if(!confirm('Delete this lead permanently?'))return;b.disabled=true;b.textContent='…';
+    api("delete_lead",{pw:currentPw,lead_id:id}).then(function(r){if(!r.ok)throw 0;leads=leads.filter(function(l){return String(l.id)!==String(id);});recompute();render();})
+      .catch(function(){b.disabled=false;b.textContent='✕';alert("Couldn't delete — run the delete_lead SQL, then try again.");});
+  }else if(act==='ct'){
+    var val=b.getAttribute('data-val')==='1';
+    var lead=leads.filter(function(l){return String(l.id)===String(id);})[0];if(lead)lead.contacted=val;render();
+    api("set_contacted",{pw:currentPw,lead_id:id,val:val}).then(function(r){
+      if(r.status===404){if(setContactedAvailable){setContactedAvailable=false;alert("Mark-as-contacted needs its SQL run once in Supabase (set_contacted). Until then this won't save.");}if(lead)lead.contacted=!val;render();}
+    }).catch(function(){});
+  }
+});
+
 document.getElementById('unlock').addEventListener('click',function(){
   var pw=document.getElementById('pwin').value.trim();
   if(!pw){document.getElementById('gateerr').textContent="Enter the password.";return;}
-  document.getElementById('gateerr').textContent="";open(pw,false);
+  document.getElementById('gateerr').textContent="";load(pw,false);
 });
 document.getElementById('pwin').addEventListener('keydown',function(e){if(e.key==='Enter')document.getElementById('unlock').click();});
-document.getElementById('refresh').addEventListener('click',function(){var pw=localStorage.getItem(PW_STORE);if(pw)open(pw,true);});
+document.getElementById('refresh').addEventListener('click',silentRefresh);
 document.getElementById('csv').addEventListener('click',toCsv);
-document.getElementById('rows').addEventListener('click',function(e){
-  var btn=e.target.closest&&e.target.closest('.delbtn');if(!btn)return;
-  var id=btn.getAttribute('data-id');
-  if(!confirm('Delete this lead permanently?'))return;
-  btn.disabled=true;btn.textContent='…';
-  fetch(SB_URL+"/rest/v1/rpc/delete_lead",{method:"POST",headers:{apikey:ANON,Authorization:"Bearer "+ANON,"Content-Type":"application/json"},body:JSON.stringify({pw:currentPw,lead_id:id})})
-    .then(function(r){if(!r.ok)throw new Error("del");leads=leads.filter(function(l){return String(l.id)!==String(id);});render();})
-    .catch(function(){btn.disabled=false;btn.textContent='✕';alert("Couldn't delete — run the delete_lead SQL in Supabase once, then try again.");});
-});
+document.getElementById('pchips').addEventListener('click',function(e){var c=e.target.closest&&e.target.closest('.pchip');if(!c)return;fProject=c.getAttribute('data-p');render();});
+document.getElementById('search').addEventListener('input',function(){fSearch=this.value;render();});
+document.getElementById('newtgl').addEventListener('click',function(){fNew=!fNew;render();});
 function lock(){localStorage.removeItem(PW_STORE);leads=[];show(false);document.getElementById('pwin').value="";}
 document.getElementById('signout').addEventListener('click',lock);
 document.getElementById('lock2').addEventListener('click',function(e){e.preventDefault();lock();});
 
+/* auto-refresh */
+document.addEventListener('visibilitychange',function(){if(!document.hidden&&currentPw&&!document.getElementById('dash').classList.contains('hidden'))silentRefresh();});
+setInterval(function(){if(!document.hidden&&currentPw&&!document.getElementById('dash').classList.contains('hidden'))silentRefresh();},60000);
+
 /* install guide */
 var guide=document.getElementById('guide');
-function openGuide(){
-  var ios=/iPad|iPhone|iPod/.test(navigator.userAgent);
-  setOs(ios?'ios':'and');
-  guide.classList.add('open');
-}
-function setOs(os){
-  document.querySelectorAll('.segbtn').forEach(function(b){b.classList.toggle('on',b.dataset.os===os);});
-  document.getElementById('stepsIos').classList.toggle('hidden',os!=='ios');
-  document.getElementById('stepsAnd').classList.toggle('hidden',os!=='and');
-}
+function openGuide(){setOs(/iPad|iPhone|iPod/.test(navigator.userAgent)?'ios':'and');guide.classList.add('open');}
+function setOs(os){document.querySelectorAll('.segbtn').forEach(function(b){b.classList.toggle('on',b.dataset.os===os);});
+  document.getElementById('stepsIos').classList.toggle('hidden',os!=='ios');document.getElementById('stepsAnd').classList.toggle('hidden',os!=='and');}
 document.querySelectorAll('.segbtn').forEach(function(b){b.addEventListener('click',function(){setOs(b.dataset.os);});});
 ['installLink','installLink2','installBtn'].forEach(function(id){var el=document.getElementById(id);if(el)el.addEventListener('click',function(e){e.preventDefault();openGuide();});});
 document.getElementById('guideClose').addEventListener('click',function(){guide.classList.remove('open');});
 document.getElementById('guideGot').addEventListener('click',function(){guide.classList.remove('open');});
 guide.addEventListener('click',function(e){if(e.target===guide)guide.classList.remove('open');});
 
-/* once installed as an app, hide the prompts; otherwise pop the guide on first visit */
 var standalone=(window.matchMedia&&window.matchMedia('(display-mode: standalone)').matches)||window.navigator.standalone;
-if(standalone){
-  ['installLink','installLink2','installBtn'].forEach(function(id){var el=document.getElementById(id);if(el)el.classList.add('hidden');});
-}else if(!localStorage.getItem('lg_guide_seen')){
-  openGuide();localStorage.setItem('lg_guide_seen','1');
-}
+if(standalone){['installLink','installLink2','installBtn'].forEach(function(id){var el=document.getElementById(id);if(el)el.classList.add('hidden');});}
+else if(!localStorage.getItem('lg_guide_seen')){openGuide();localStorage.setItem('lg_guide_seen','1');}
 
 var saved=localStorage.getItem(PW_STORE);
-if(saved)open(saved,true);else show(false);
+if(saved)load(saved,true);else show(false);
 
 if('serviceWorker' in navigator){window.addEventListener('load',function(){navigator.serviceWorker.register('sw.js').catch(function(){});});}
 </script>
