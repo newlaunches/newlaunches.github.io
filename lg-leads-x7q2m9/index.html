@@ -2,7 +2,7 @@
 <html lang="en">
 <head>
 <meta charset="utf-8">
-<meta name="viewport" content="width=device-width, initial-scale=1">
+<meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
 <meta name="robots" content="noindex,nofollow">
 <title>Lead Tracker</title>
 <link rel="icon" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 32 32'%3E%3Crect width='32' height='32' rx='7' fill='%2313241c'/%3E%3Cpath d='M16 6l8 7v13h-5v-7h-6v7H8V13z' fill='%23d8b878'/%3E%3C/svg%3E">
@@ -15,72 +15,179 @@
 <meta name="apple-mobile-web-app-title" content="Leads">
 <link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:wght@600;700&family=Plus+Jakarta+Sans:wght@400;500;600;700;800&display=swap" rel="stylesheet">
 <style>
-:root{--deep:#13241c;--deep2:#0d1813;--gold:#d8b878;--gold2:#a9802f;--cream:#f7f3ea;--line:rgba(255,255,255,.12);--mut:#9a9482}
+:root{--deep:#13241c;--deep2:#0a120d;--gold:#d8b878;--gold2:#a9802f;--cream:#f7f3ea;--line:rgba(255,255,255,.1);--mut:#9a9482;--card:rgba(255,255,255,.045)}
 *{box-sizing:border-box;margin:0}
-body{font-family:'Plus Jakarta Sans',system-ui,sans-serif;background:linear-gradient(165deg,#16291f,#0d1813);color:var(--cream);min-height:100vh;-webkit-font-smoothing:antialiased}
+html{-webkit-text-size-adjust:100%}
+body{font-family:'Plus Jakarta Sans',system-ui,sans-serif;color:var(--cream);line-height:1.5;-webkit-font-smoothing:antialiased;min-height:100vh;
+  background:radial-gradient(120% 90% at 85% -10%,rgba(216,184,120,.14),transparent 50%),radial-gradient(100% 80% at 10% 110%,rgba(39,84,63,.4),transparent 55%),linear-gradient(168deg,#16291f,#0b120d 70%);
+  background-attachment:fixed;padding:env(safe-area-inset-top) 0 0}
 .serif{font-family:'Cormorant Garamond',serif}
 a{color:var(--gold)}
-.wrap{max-width:1040px;margin:0 auto;padding:26px 20px 80px}
+img{display:block;max-width:100%}
+.wrap{max-width:1060px;margin:0 auto;padding:24px 18px 90px}
+.hidden{display:none!important}
+.btn{display:inline-flex;align-items:center;justify-content:center;gap:7px;border:0;border-radius:30px;padding:13px 20px;font-size:14px;font-weight:700;font-family:inherit;cursor:pointer;background:linear-gradient(135deg,var(--gold),var(--gold2));color:#241803;transition:.18s;white-space:nowrap}
+.btn:hover{transform:translateY(-1px);box-shadow:0 8px 22px rgba(216,184,120,.28)}
+.btn.ghost{background:rgba(255,255,255,.08);color:#fff;border:1px solid var(--line)}
+.btn.ghost:hover{background:rgba(255,255,255,.14);box-shadow:none}
+
+/* GATE */
 .gate{min-height:100vh;display:grid;place-items:center;padding:24px}
-.gatebox{width:100%;max-width:380px;background:rgba(255,255,255,.05);border:1px solid var(--line);border-radius:20px;padding:34px;text-align:center}
-.gatebox .ey{font-size:11px;font-weight:800;letter-spacing:.22em;text-transform:uppercase;color:var(--gold)}
-.gatebox h1{font-family:'Cormorant Garamond',serif;font-size:36px;font-weight:700;margin:4px 0 4px}
+.gatebox{width:100%;max-width:390px;background:var(--card);border:1px solid var(--line);border-radius:24px;padding:38px 32px 30px;text-align:center;box-shadow:0 30px 80px rgba(0,0,0,.4)}
+.logo{width:84px;height:84px;border-radius:21px;margin:0 auto 18px;box-shadow:0 12px 30px rgba(0,0,0,.45),0 0 0 1px rgba(216,184,120,.25)}
+.gatebox .ey{font-size:11px;font-weight:800;letter-spacing:.24em;text-transform:uppercase;color:var(--gold)}
+.gatebox h1{font-family:'Cormorant Garamond',serif;font-size:38px;font-weight:700;margin:2px 0 4px;line-height:1}
 .gatebox p{color:var(--mut);font-size:13px;margin-bottom:20px}
-input{width:100%;background:rgba(0,0,0,.25);border:1px solid var(--line);border-radius:11px;padding:14px;font-size:16px;font-family:inherit;color:#fff;text-align:center;letter-spacing:.1em;margin-bottom:12px}
+input{width:100%;background:rgba(0,0,0,.3);border:1px solid var(--line);border-radius:13px;padding:15px;font-size:17px;font-family:inherit;color:#fff;text-align:center;letter-spacing:.12em}
 input:focus{outline:0;border-color:var(--gold)}
-.btn{display:inline-flex;align-items:center;justify-content:center;gap:7px;border:0;border-radius:30px;padding:13px 20px;font-size:14px;font-weight:700;font-family:inherit;cursor:pointer;background:linear-gradient(135deg,var(--gold),var(--gold2));color:#241803;transition:.18s}
-.btn:hover{transform:translateY(-1px)}.btn.ghost{background:rgba(255,255,255,.1);color:#fff}
-.err{color:#ff9b8a;font-size:13px;margin-top:6px;min-height:18px}
-.hidden{display:none}
-.top{display:flex;align-items:center;gap:14px;flex-wrap:wrap;margin-bottom:22px}
-.top h1{font-family:'Cormorant Garamond',serif;font-size:32px;font-weight:700;line-height:1}
-.top .ey{font-size:10.5px;font-weight:800;letter-spacing:.2em;text-transform:uppercase;color:var(--gold)}
-.count{background:rgba(216,184,120,.15);border:1px solid rgba(216,184,120,.4);color:var(--gold);font-weight:800;font-size:13px;padding:6px 13px;border-radius:30px}
-.actions{margin-left:auto;display:flex;gap:9px;flex-wrap:wrap}.actions .btn{padding:10px 16px;font-size:13px}
-.tablewrap{border:1px solid var(--line);border-radius:16px;overflow:hidden;background:rgba(255,255,255,.03)}
+.gatebox .btn{width:100%;margin-top:12px;padding:15px}
+.err{color:#ff9b8a;font-size:13px;margin-top:8px;min-height:18px}
+.installlink{display:inline-flex;align-items:center;gap:7px;margin-top:22px;font-size:13px;font-weight:700;color:var(--gold);cursor:pointer;border:0;background:none;font-family:inherit}
+.installlink:hover{text-decoration:underline}
+
+/* DASHBOARD */
+.top{display:flex;align-items:center;gap:14px;flex-wrap:wrap;margin-bottom:24px}
+.brand{display:flex;align-items:center;gap:13px}
+.brand img{width:46px;height:46px;border-radius:13px;box-shadow:0 6px 16px rgba(0,0,0,.4)}
+.brand .ey{font-size:10px;font-weight:800;letter-spacing:.2em;text-transform:uppercase;color:var(--gold)}
+.brand h1{font-family:'Cormorant Garamond',serif;font-size:30px;font-weight:700;line-height:.95}
+.count{background:rgba(216,184,120,.14);border:1px solid rgba(216,184,120,.4);color:var(--gold);font-weight:800;font-size:13px;padding:7px 14px;border-radius:30px}
+.actions{margin-left:auto;display:flex;gap:8px;flex-wrap:wrap}
+.actions .btn{padding:10px 15px;font-size:12.5px}
+.tablewrap{border:1px solid var(--line);border-radius:18px;overflow:hidden;background:rgba(255,255,255,.025);box-shadow:0 20px 50px rgba(0,0,0,.28)}
 table{width:100%;border-collapse:collapse;font-size:14px}
-th{text-align:left;font-size:10.5px;font-weight:800;letter-spacing:.1em;text-transform:uppercase;color:var(--gold);padding:14px 16px;background:rgba(0,0,0,.2);white-space:nowrap}
-td{padding:13px 16px;border-top:1px solid var(--line);vertical-align:top}
-tr:hover td{background:rgba(255,255,255,.03)}
-td.name{font-weight:700;color:#fff}td.phone a{color:var(--gold);font-weight:700;text-decoration:none}
-td.unit{color:#cabfa9}td.time{color:var(--mut);font-size:12.5px;white-space:nowrap}
-td.del{text-align:right;width:1%}.delbtn{background:rgba(255,90,70,.14);border:1px solid rgba(255,90,70,.3);color:#ff9b8a;width:30px;height:30px;border-radius:8px;cursor:pointer;font-size:13px;line-height:1}.delbtn:hover{background:rgba(255,90,70,.28)}
-.empty{text-align:center;color:var(--mut);padding:48px 20px;font-size:15px}
-.note{color:var(--mut);font-size:12px;margin-top:14px;text-align:center}
-@media(max-width:560px){td.proj,th.proj{display:none}.wrap{padding:18px 14px 80px}}
+th{text-align:left;font-size:10px;font-weight:800;letter-spacing:.12em;text-transform:uppercase;color:var(--gold);padding:15px 18px;background:rgba(0,0,0,.25);white-space:nowrap}
+td{padding:14px 18px;border-top:1px solid var(--line);vertical-align:middle}
+tbody tr{transition:.15s}tbody tr:hover td{background:rgba(216,184,120,.05)}
+.who{display:flex;align-items:center;gap:12px}
+.av{width:38px;height:38px;border-radius:50%;flex:none;display:grid;place-items:center;font-family:'Cormorant Garamond',serif;font-weight:700;font-size:16px;color:#241803;background:linear-gradient(140deg,#f0d79a,#c8a86a)}
+.who .nm{font-weight:700;color:#fff}
+td.phone a{color:var(--gold);font-weight:700;text-decoration:none}
+.uchip{display:inline-block;background:rgba(255,255,255,.07);border:1px solid var(--line);border-radius:20px;padding:4px 11px;font-size:12px;color:#cabfa9;font-weight:600}
+td.time{color:var(--mut);font-size:12.5px;white-space:nowrap}
+td.del{text-align:right;width:1%}
+.delbtn{background:rgba(255,90,70,.12);border:1px solid rgba(255,90,70,.28);color:#ff9b8a;width:30px;height:30px;border-radius:9px;cursor:pointer;font-size:13px;line-height:1}
+.delbtn:hover{background:rgba(255,90,70,.26)}
+.empty{text-align:center;padding:60px 24px}
+.empty .big{font-size:42px;margin-bottom:10px}
+.empty h3{font-family:'Cormorant Garamond',serif;font-size:26px;font-weight:600;color:#fff}
+.empty p{color:var(--mut);font-size:14px;margin-top:6px}
+.note{color:var(--mut);font-size:12px;margin-top:16px;text-align:center}
+.note a{cursor:pointer}
+
+/* INSTALL GUIDE MODAL */
+.modal{position:fixed;inset:0;z-index:50;background:rgba(6,10,7,.82);backdrop-filter:blur(8px);display:none;align-items:flex-start;justify-content:center;overflow-y:auto;padding:24px 16px}
+.modal.open{display:flex}
+.modalbox{width:100%;max-width:480px;background:linear-gradient(170deg,#1b3326,#0c1610);border:1px solid rgba(216,184,120,.25);border-radius:24px;padding:32px 28px;margin:auto;box-shadow:0 40px 100px rgba(0,0,0,.6)}
+.mx{float:right;background:rgba(255,255,255,.1);border:0;color:#fff;width:34px;height:34px;border-radius:10px;font-size:19px;cursor:pointer;line-height:1}
+.mhead{text-align:center;margin-bottom:22px}
+.mhead img{width:78px;height:78px;border-radius:20px;margin:6px auto 14px;box-shadow:0 14px 34px rgba(0,0,0,.5)}
+.mhead .ey{font-size:10.5px;font-weight:800;letter-spacing:.22em;text-transform:uppercase;color:var(--gold)}
+.mhead h2{font-family:'Cormorant Garamond',serif;font-size:30px;font-weight:700;line-height:1.05;margin-top:4px}
+.mhead p{color:#c3bba8;font-size:13.5px;margin-top:8px}
+.feats{display:grid;grid-template-columns:1fr 1fr;gap:10px;margin:0 0 24px}
+.feat{background:rgba(255,255,255,.05);border:1px solid var(--line);border-radius:13px;padding:13px 14px}
+.feat .fi{font-size:19px}
+.feat b{display:block;font-size:13px;margin:5px 0 2px;color:#fff}
+.feat span{font-size:11.5px;color:var(--mut);line-height:1.4}
+.steps .seg{display:inline-flex;gap:6px;margin-bottom:14px}
+.segbtn{background:rgba(255,255,255,.08);border:1px solid var(--line);color:#cabfa9;font-family:inherit;font-weight:700;font-size:13px;padding:8px 16px;border-radius:30px;cursor:pointer}
+.segbtn.on{background:linear-gradient(135deg,var(--gold),var(--gold2));color:#241803;border-color:transparent}
+.steplist{counter-reset:s;list-style:none;padding:0;margin:0}
+.steplist li{counter-increment:s;position:relative;padding:11px 0 11px 44px;border-bottom:1px solid var(--line);font-size:14px;color:#e8e0cf;line-height:1.5}
+.steplist li:last-child{border-bottom:0}
+.steplist li::before{content:counter(s);position:absolute;left:0;top:9px;width:28px;height:28px;border-radius:50%;background:rgba(216,184,120,.16);border:1px solid rgba(216,184,120,.4);color:var(--gold);font-weight:800;font-size:13px;display:grid;place-items:center}
+.steplist b{color:#fff}
+.modalbox .btn{width:100%;margin-top:22px}
+
+@media(max-width:560px){
+  .wrap{padding:18px 12px 90px}
+  td.proj,th.proj{display:none}
+  .feats{grid-template-columns:1fr}
+  .brand h1{font-size:26px}
+}
 </style>
 </head>
 <body>
 
+<!-- GATE -->
 <div class="gate" id="gate">
   <div class="gatebox">
+    <img class="logo" src="icon-192.png" alt="Lead Tracker">
     <div class="ey">Private</div>
     <h1 class="serif">Lead Tracker</h1>
-    <p>Enter password to view leads.</p>
+    <p>Enter password to view your leads.</p>
     <input id="pwin" type="password" inputmode="numeric" placeholder="Password" autocomplete="off">
-    <button class="btn" id="unlock" style="width:100%">Unlock →</button>
+    <button class="btn" id="unlock">Unlock →</button>
     <div class="err" id="gateerr"></div>
+    <button class="installlink" id="installLink">📲 Add to your phone as an app</button>
   </div>
 </div>
 
+<!-- DASHBOARD -->
 <div class="wrap hidden" id="dash">
   <div class="top">
-    <div><div class="ey">New Launch Leads</div><h1 class="serif">Lead Tracker</h1></div>
+    <div class="brand">
+      <img src="icon-192.png" alt="">
+      <div><div class="ey">New Launch Leads</div><h1 class="serif">Lead Tracker</h1></div>
+    </div>
     <span class="count" id="count">—</span>
     <div class="actions">
       <button class="btn ghost" id="refresh">↻ Refresh</button>
       <button class="btn ghost" id="csv">⬇ CSV</button>
+      <button class="btn ghost" id="installBtn">📲 Install</button>
       <button class="btn ghost" id="signout">Lock</button>
     </div>
   </div>
-  <div class="tablewrap">
+  <div class="tablewrap" id="tablewrap">
     <table>
-      <thead><tr><th>Name</th><th>Mobile</th><th>Interested in</th><th class="proj">Project</th><th>When</th><th></th></tr></thead>
+      <thead><tr><th>Lead</th><th>Mobile</th><th>Interested in</th><th class="proj">Project</th><th>When</th><th></th></tr></thead>
       <tbody id="rows"></tbody>
     </table>
   </div>
-  <div class="empty hidden" id="empty">No leads yet — they'll appear here the moment someone registers.</div>
-  <div class="note">Reads live from Supabase · <a href="#" id="lock2">lock</a></div>
+  <div class="empty hidden" id="empty">
+    <div class="big">🌱</div><h3>No leads yet</h3>
+    <p>They'll appear here the moment someone registers on the site.</p>
+  </div>
+  <div class="note">Live from your registration form · <a id="installLink2">install as app</a> · <a id="lock2">lock</a></div>
+</div>
+
+<!-- INSTALL GUIDE -->
+<div class="modal" id="guide">
+  <div class="modalbox">
+    <button class="mx" id="guideClose">×</button>
+    <div class="mhead">
+      <img src="icon-192.png" alt="Lead Tracker">
+      <div class="ey">Your private app</div>
+      <h2 class="serif">Put your leads on your home screen</h2>
+      <p>Add it once — then it opens like a real app, fullscreen, every lead at your fingertips.</p>
+    </div>
+    <div class="feats">
+      <div class="feat"><div class="fi">🔔</div><b>Every lead, instantly</b><span>New registrations show up live — no logging into anything.</span></div>
+      <div class="feat"><div class="fi">🔒</div><b>Private &amp; password-locked</b><span>Only you can open it. Your leads stay yours.</span></div>
+      <div class="feat"><div class="fi">⚡</div><b>Feels like a real app</b><span>Fullscreen icon on your home screen, opens instantly.</span></div>
+      <div class="feat"><div class="fi">📞</div><b>Tap to call · export</b><span>One tap to dial a lead, or download the whole list as CSV.</span></div>
+    </div>
+    <div class="steps">
+      <div class="seg">
+        <button class="segbtn on" data-os="ios">iPhone</button>
+        <button class="segbtn" data-os="and">Android</button>
+      </div>
+      <ol class="steplist" id="stepsIos">
+        <li>Open this page in <b>Safari</b> (not Chrome).</li>
+        <li>Tap the <b>Share</b> button — the square with an ↑ arrow.</li>
+        <li>Scroll down and tap <b>“Add to Home Screen”</b>.</li>
+        <li>Tap <b>Add</b> — the gold <b>Leads</b> icon appears on your home screen. 🎉</li>
+      </ol>
+      <ol class="steplist hidden" id="stepsAnd">
+        <li>Open this page in <b>Chrome</b>.</li>
+        <li>Tap the <b>⋮</b> menu (top-right).</li>
+        <li>Tap <b>“Add to Home screen”</b> / <b>“Install app”</b>.</li>
+        <li>Tap <b>Add</b> — the <b>Leads</b> app icon appears. 🎉</li>
+      </ol>
+    </div>
+    <button class="btn" id="guideGot">Got it</button>
+  </div>
 </div>
 
 <script>
@@ -91,20 +198,17 @@ var leads=[],currentPw="";
 
 function show(dash){document.getElementById('gate').classList.toggle('hidden',dash);document.getElementById('dash').classList.toggle('hidden',!dash);}
 function esc(s){return (s==null?"":String(s)).replace(/[&<>"]/g,function(c){return{'&':'&amp;','<':'&lt;','>':'&gt;','"':'&quot;'}[c];});}
-function fmt(t){if(!t)return"—";var d=new Date(t);if(isNaN(d))return esc(t);return d.toLocaleString('en-SG',{day:'2-digit',month:'short',hour:'2-digit',minute:'2-digit'});}
+function initials(n){var p=(n||'?').trim().split(/\s+/);return (((p[0]||'')[0]||'?')+((p[1]||'')[0]||'')).toUpperCase();}
+function ago(t){if(!t)return"—";var d=new Date(t);if(isNaN(d))return esc(t);var s=(Date.now()-d.getTime())/1000;
+  if(s<60)return"just now";if(s<3600)return Math.floor(s/60)+"m ago";if(s<86400)return Math.floor(s/3600)+"h ago";
+  if(s<604800)return Math.floor(s/86400)+"d ago";return d.toLocaleDateString('en-SG',{day:'2-digit',month:'short'});}
 
 function fetchLeads(pw){
-  return fetch(SB_URL+"/rest/v1/rpc/get_leads",{
-    method:"POST",
+  return fetch(SB_URL+"/rest/v1/rpc/get_leads",{method:"POST",
     headers:{apikey:ANON,Authorization:"Bearer "+ANON,"Content-Type":"application/json"},
     body:JSON.stringify({pw:pw})
-  }).then(function(r){
-    if(r.status===404){throw new Error("setup");}      // function not created yet
-    if(!r.ok){throw new Error("pw");}                    // wrong password (function raises)
-    return r.json();
-  });
+  }).then(function(r){if(r.status===404)throw new Error("setup");if(!r.ok)throw new Error("pw");return r.json();});
 }
-
 function open(pw,fromSaved){
   fetchLeads(pw).then(function(data){
     leads=Array.isArray(data)?data:[];
@@ -117,23 +221,21 @@ function open(pw,fromSaved){
       : (fromSaved?"":"Wrong password.");
   });
 }
-
 function render(){
   document.getElementById('count').textContent=leads.length+" lead"+(leads.length===1?"":"s");
-  var tb=document.getElementById('rows'),empty=document.getElementById('empty');
-  if(!leads.length){tb.innerHTML="";empty.classList.remove('hidden');return;}
-  empty.classList.add('hidden');
+  var tb=document.getElementById('rows'),empty=document.getElementById('empty'),tw=document.getElementById('tablewrap');
+  if(!leads.length){tb.innerHTML="";empty.classList.remove('hidden');tw.classList.add('hidden');return;}
+  empty.classList.add('hidden');tw.classList.remove('hidden');
   tb.innerHTML=leads.map(function(l){
     var ph=esc(l.phone||"");
-    return "<tr><td class='name'>"+esc(l.name||"—")+"</td>"+
+    return "<tr><td><div class='who'><div class='av'>"+esc(initials(l.name))+"</div><div class='nm'>"+esc(l.name||"—")+"</div></div></td>"+
       "<td class='phone'>"+(ph?"<a href='tel:"+ph.replace(/[^0-9+]/g,'')+"'>"+ph+"</a>":"—")+"</td>"+
-      "<td class='unit'>"+esc(l.unit_interest||"Any")+"</td>"+
+      "<td><span class='uchip'>"+esc(l.unit_interest||"Any unit")+"</span></td>"+
       "<td class='proj'>"+esc(l.project||"—")+"</td>"+
-      "<td class='time'>"+fmt(l.created_at||l.inserted_at)+"</td>"+
+      "<td class='time'>"+ago(l.created_at||l.inserted_at)+"</td>"+
       "<td class='del'><button class='delbtn' data-id='"+esc(l.id)+"' title='Delete lead'>✕</button></td></tr>";
   }).join("");
 }
-
 function toCsv(){
   var head=["Name","Mobile","Interested in","Project","When"];
   var rows=leads.map(function(l){return [l.name,l.phone,l.unit_interest||"Any",l.project,(l.created_at||l.inserted_at||"")];});
@@ -161,6 +263,29 @@ document.getElementById('rows').addEventListener('click',function(e){
 function lock(){localStorage.removeItem(PW_STORE);leads=[];show(false);document.getElementById('pwin').value="";}
 document.getElementById('signout').addEventListener('click',lock);
 document.getElementById('lock2').addEventListener('click',function(e){e.preventDefault();lock();});
+
+/* install guide */
+var guide=document.getElementById('guide');
+function openGuide(){
+  var ios=/iPad|iPhone|iPod/.test(navigator.userAgent);
+  setOs(ios?'ios':'and');
+  guide.classList.add('open');
+}
+function setOs(os){
+  document.querySelectorAll('.segbtn').forEach(function(b){b.classList.toggle('on',b.dataset.os===os);});
+  document.getElementById('stepsIos').classList.toggle('hidden',os!=='ios');
+  document.getElementById('stepsAnd').classList.toggle('hidden',os!=='and');
+}
+document.querySelectorAll('.segbtn').forEach(function(b){b.addEventListener('click',function(){setOs(b.dataset.os);});});
+['installLink','installLink2','installBtn'].forEach(function(id){var el=document.getElementById(id);if(el)el.addEventListener('click',function(e){e.preventDefault();openGuide();});});
+document.getElementById('guideClose').addEventListener('click',function(){guide.classList.remove('open');});
+document.getElementById('guideGot').addEventListener('click',function(){guide.classList.remove('open');});
+guide.addEventListener('click',function(e){if(e.target===guide)guide.classList.remove('open');});
+
+/* hide the install prompts once it's already installed as an app */
+if(window.matchMedia&&window.matchMedia('(display-mode: standalone)').matches){
+  ['installLink','installLink2','installBtn'].forEach(function(id){var el=document.getElementById(id);if(el)el.classList.add('hidden');});
+}
 
 var saved=localStorage.getItem(PW_STORE);
 if(saved)open(saved,true);else show(false);
