@@ -61,11 +61,20 @@ body::after{content:"";position:fixed;inset:0;z-index:9998;pointer-events:none;o
 .nav .btn{padding:10px 20px;font-size:13px;margin-left:6px}
 .burger{display:none;margin-left:auto;width:42px;height:42px;border:0;background:rgba(255,255,255,.12);border-radius:12px;cursor:pointer;flex-direction:column;gap:5px;align-items:center;justify-content:center}
 .burger span{width:18px;height:2px;background:#fff;border-radius:2px;transition:.25s}
-.mnav{position:fixed;inset:0;z-index:95;background:rgba(11,18,14,.97);backdrop-filter:blur(8px);display:none;flex-direction:column;align-items:center;justify-content:center;gap:6px}
+.mnav{position:fixed;inset:0;z-index:95;background:linear-gradient(165deg,#172a20,#0b120d);display:none;flex-direction:column;justify-content:center;align-items:center;padding:60px 26px 32px;overflow-y:auto}
 .mnav.open{display:flex}
-.mnav a{color:#f0e8d6;font-family:'Cormorant Garamond',serif;font-size:30px;font-weight:600;padding:9px 20px}
-.mnav .btn{margin-top:18px;font-size:16px;padding:15px 34px}
-.mnav .mx{position:absolute;top:22px;right:24px;font-size:30px;color:#fff;background:none;border:0;cursor:pointer}
+.mnav .mx{position:absolute;top:18px;right:20px;font-size:26px;color:#fff;background:rgba(255,255,255,.12);border:0;cursor:pointer;width:42px;height:42px;border-radius:12px;line-height:1;display:grid;place-items:center}
+.mnav-inner{width:100%;max-width:360px;display:flex;flex-direction:column}
+.mnav-brand{font-family:'Cormorant Garamond',serif;font-weight:700;font-size:29px;color:#fff;text-align:center;line-height:1}
+.mnav-brand small{display:block;font-family:'Plus Jakarta Sans';font-size:8.5px;font-weight:800;letter-spacing:.26em;color:var(--gold2);text-transform:uppercase;margin-top:8px}
+.mnav-list{display:flex;flex-direction:column;border-top:1px solid rgba(216,184,120,.22);margin-top:22px}
+.mnav-list a{font-family:'Cormorant Garamond',serif;font-size:24px;font-weight:600;color:#efe7d5;padding:14px 6px;text-align:center;border-bottom:1px solid rgba(255,255,255,.08);transition:.18s;display:flex;align-items:center;justify-content:center;gap:8px}
+.mnav-list a:active,.mnav-list a:hover{color:var(--gold2)}
+.mnav-list a.mpri{color:#f3b6a8}
+.mnav-cta{margin-top:24px;font-size:15.5px;padding:16px;color:#241803;font-weight:800}
+.mnav-contact{display:flex;gap:11px;margin-top:14px}
+.mnav-contact a{flex:1;text-align:center;padding:13px;border-radius:30px;font-size:13.5px;font-weight:700;color:#fff;background:rgba(255,255,255,.1)}
+.mnav-contact a.mwa{background:#25d366}
 
 /* HERO */
 .hero{position:relative;min-height:100svh;display:flex;align-items:flex-end;color:#fff;overflow:hidden;padding:0 0 70px}
@@ -326,14 +335,23 @@ footer .fbrand{font-family:'Cormorant Garamond',serif;font-size:24px;color:#f0e8
 
 <div class="mnav" id="mnav">
   <button class="mx" id="mx" aria-label="Close">×</button>
-  <a href="#priority" style="color:#f0b9ad">⚡ Priority Sales</a>
-  <a href="#highlights">Highlights</a>
-  <a href="#gallery">Gallery</a>
-  <a href="#siteplan">Site Plan</a>
-  <a href="#residences">Floor Plans</a>
-  <a href="#location">Location</a>
-  <a href="#value">Why Lentor Gardens</a>
-  <a class="btn btn-g" href="#register">Register for VVIP</a>
+  <div class="mnav-inner">
+    <div class="mnav-brand serif">Lentor Gardens<small>Residences · by Kingsford</small></div>
+    <nav class="mnav-list">
+      <a class="mpri" href="#priority">⚡ Priority Sales</a>
+      <a href="#highlights">Highlights</a>
+      <a href="#gallery">Gallery</a>
+      <a href="#siteplan">Site Plan</a>
+      <a href="#residences">Floor Plans</a>
+      <a href="#location">Location</a>
+      <a href="#value">Why Lentor Gardens</a>
+    </nav>
+    <a class="btn btn-g mnav-cta" href="#register">Register for VVIP Preview</a>
+    <div class="mnav-contact">
+      <a href="tel:+6593864036">📞 9386 4036</a>
+      <a class="mwa" href="https://wa.me/6593864036?text=Hi%20Kiwi%20Lim%2C%20I'm%20keen%20on%20Lentor%20Gardens%20Residences%20—%20please%20send%20me%20details." target="_blank" rel="noopener">WhatsApp Kiwi</a>
+    </div>
+  </div>
 </div>
 
 <!-- HERO -->
@@ -500,7 +518,7 @@ footer .fbrand{font-family:'Cormorant Garamond',serif;font-size:24px;color:#f0e8
 <!-- RESIDENCES / floor plans -->
 <section class="sec" id="residences">
   <div class="wrap">
-    <div class="phead ctr rv"><div class="eyebrow">The residences</div><h2 class="serif">Floor plans &amp; layouts</h2>
+    <div class="phead ctr rv"><div class="eyebrow">The homes</div><h2 class="serif">Floor plans &amp; layouts</h2>
       <p>26 layouts from a 646 sq ft 2-bedroom to a 1,496 sq ft strata terrace. Tap any plan to view it full-size.</p></div>
     <div class="filt rv d1" id="filt">
       <button class="fbtn on" data-g="all">All</button>
@@ -577,7 +595,7 @@ footer .fbrand{font-family:'Cormorant Garamond',serif;font-size:24px;color:#f0e8
           <div class="f"><label>Mobile</label><input id="rphone" inputmode="tel" placeholder="e.g. 9123 4567" autocomplete="tel"></div>
           <div class="f"><label>Interested in</label><select id="runit">
             <option value="">Any unit type</option>
-            <option>2-Bedroom</option><option>3-Bedroom</option><option>4-Bedroom</option><option>Strata Terrace</option>
+            <option>2-Bedroom</option><option>3-Bedroom</option><option>4-Bedroom</option><option>Strata Terrace (5BR)</option><option>Commercial unit (priority)</option>
           </select></div>
           <button class="btn btn-g" id="rsubmit">Request VVIP Preview →</button>
           <div class="regor">— or reach Kiwi directly —</div>
