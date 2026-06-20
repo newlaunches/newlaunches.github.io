@@ -11,301 +11,328 @@
 <meta property="og:image" content="https://newlaunches.github.io/lentor-gardens-residences/og.png">
 <meta property="og:url" content="https://newlaunches.github.io/lentor-gardens-residences/">
 <meta name="twitter:card" content="summary_large_image">
-<link rel="icon" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 32 32'%3E%3Crect width='32' height='32' rx='7' fill='%2314120d'/%3E%3Cpath d='M16 6l8 7v13h-5v-7h-6v7H8V13z' fill='%23caa24f'/%3E%3C/svg%3E">
+<link rel="icon" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 32 32'%3E%3Crect width='32' height='32' rx='7' fill='%2312100c'/%3E%3Cpath d='M16 6l8 7v13h-5v-7h-6v7H8V13z' fill='%23caa24f'/%3E%3C/svg%3E">
 <link rel="preconnect" href="https://fonts.googleapis.com"><link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-<link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:wght@500;600;700&family=Plus+Jakarta+Sans:wght@400;500;600;700;800&display=swap" rel="stylesheet">
+<link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,500;0,600;0,700;1,500&family=Plus+Jakarta+Sans:wght@400;500;600;700;800&display=swap" rel="stylesheet">
 <style>
-:root{--ink:#15120d;--ink2:#4a4338;--mut:#8a8073;--line:#e7ded0;--cream:#f8f4ec;--card:#fff;--gold:#b0822f;--gold2:#caa24f;--green:#2f5d4c;--shadow:0 10px 40px rgba(21,18,13,.12)}
+:root{--ink:#14110b;--ink2:#5a5044;--mut:#938776;--line:#e9e0d0;--cream:#f6f1e7;--card:#fffdf8;--gold:#a9802f;--gold2:#d2ab63;--green:#2c5446;--deep:#15241d;--shadow:0 18px 50px rgba(20,17,11,.16)}
 *{box-sizing:border-box;margin:0}
-body{font-family:'Plus Jakarta Sans',system-ui,sans-serif;color:var(--ink);background:var(--cream);line-height:1.6;-webkit-font-smoothing:antialiased}
+html{scroll-behavior:smooth}
+body{font-family:'Plus Jakarta Sans',system-ui,sans-serif;color:var(--ink);background:var(--cream);line-height:1.5;-webkit-font-smoothing:antialiased}
 .serif{font-family:'Cormorant Garamond',Georgia,serif}
-.wrap{max-width:1080px;margin:0 auto;padding:0 22px}
-h1,h2,h3{line-height:1.12;letter-spacing:-.01em}
 a{color:inherit;text-decoration:none}
-.btn{display:inline-flex;align-items:center;justify-content:center;gap:8px;font-weight:700;border-radius:40px;padding:14px 26px;font-size:15px;cursor:pointer;border:0;transition:.18s}
-.btn-g{background:linear-gradient(135deg,var(--gold2),var(--gold));color:#fff;box-shadow:0 8px 24px rgba(176,130,47,.4)}
+.wrap{max-width:1120px;margin:0 auto;padding:0 26px}
+.eyebrow{font-size:11px;font-weight:800;text-transform:uppercase;letter-spacing:.26em;color:var(--gold)}
+.btn{display:inline-flex;align-items:center;justify-content:center;gap:8px;font-weight:700;border-radius:40px;padding:13px 24px;font-size:14.5px;cursor:pointer;border:0;transition:.2s;white-space:nowrap}
+.btn-g{background:linear-gradient(135deg,var(--gold2),var(--gold));color:#1a1305;box-shadow:0 10px 26px rgba(169,128,47,.42)}
 .btn-g:hover{transform:translateY(-2px)}
-.btn-wa{background:#25d366;color:#fff;box-shadow:0 8px 24px rgba(37,211,102,.35)}
-.btn-o{background:transparent;border:1.5px solid rgba(255,255,255,.55);color:#fff}
-.eyebrow{font-size:12px;font-weight:800;text-transform:uppercase;letter-spacing:.2em;color:var(--gold)}
+.btn-wa{background:#25d366;color:#fff}
+.btn-o{background:rgba(255,255,255,.08);border:1.5px solid rgba(255,255,255,.5);color:#fff;backdrop-filter:blur(6px)}
+.btn-d{background:var(--ink);color:#fff}
 
-/* hero */
-.hero{position:relative;min-height:92vh;display:flex;align-items:center;color:#fff;overflow:hidden}
-.hero::before{content:"";position:absolute;inset:0;background:linear-gradient(160deg,#1c2b24,#14120d 70%);z-index:-2}
-.hero::after{content:"";position:absolute;inset:0;background:radial-gradient(900px 500px at 75% 15%,rgba(176,130,47,.28),transparent 60%),radial-gradient(700px 600px at 10% 90%,rgba(47,93,76,.4),transparent 55%);z-index:-1}
-.hero .wrap{padding-top:84px;padding-bottom:120px}
-.hero .eyebrow{margin-bottom:18px}
-.hero h1{font-family:'Cormorant Garamond',serif;font-weight:700;font-size:60px;letter-spacing:-.02em;max-width:14ch}
-.hero .tag{font-family:'Cormorant Garamond',serif;font-style:italic;font-size:24px;color:#e9dcc2;margin:14px 0 26px;max-width:30ch}
-.hero .cta-row{display:flex;gap:12px;flex-wrap:wrap;margin-bottom:34px}
-.badges{display:grid;grid-template-columns:repeat(4,1fr);gap:1px;background:rgba(255,255,255,.14);border:1px solid rgba(255,255,255,.14);border-radius:16px;overflow:hidden;max-width:620px}
-.badge{background:rgba(20,18,13,.45);backdrop-filter:blur(6px);padding:15px 12px;text-align:center}
-.bk{font-size:10.5px;text-transform:uppercase;letter-spacing:.1em;color:#cdbfa6;font-weight:700}
-.bv{font-family:'Cormorant Garamond',serif;font-size:23px;font-weight:600;margin-top:3px}
-.book{display:inline-flex;align-items:center;gap:9px;margin-top:26px;background:rgba(176,130,47,.2);border:1px solid rgba(202,162,79,.5);border-radius:40px;padding:9px 18px;font-size:13.5px;font-weight:600}
-.book .pulse{width:8px;height:8px;border-radius:50%;background:var(--gold2);box-shadow:0 0 0 0 rgba(202,162,79,.6);animation:pl 2s infinite}
-@keyframes pl{70%{box-shadow:0 0 0 9px rgba(202,162,79,0)}100%{box-shadow:0 0 0 0 rgba(202,162,79,0)}}
+/* top bar */
+.bar{position:fixed;top:0;left:0;right:0;z-index:60;display:flex;align-items:center;gap:18px;padding:14px 26px;
+  background:rgba(18,15,10,.55);backdrop-filter:blur(16px) saturate(1.2);border-bottom:1px solid rgba(255,255,255,.08);transition:.3s}
+.bar.solid{background:rgba(18,15,10,.94)}
+.brand{font-family:'Cormorant Garamond',serif;font-weight:700;font-size:21px;color:#fff;letter-spacing:.01em;white-space:nowrap}
+.brand small{display:block;font-family:'Plus Jakarta Sans';font-size:9px;font-weight:800;letter-spacing:.24em;color:var(--gold2);text-transform:uppercase;margin-top:-2px}
+.tabs{display:flex;gap:4px;margin-left:auto;overflow-x:auto;scrollbar-width:none}
+.tabs::-webkit-scrollbar{display:none}
+.tabbtn{background:none;border:0;color:rgba(255,255,255,.66);font-family:inherit;font-weight:700;font-size:13.5px;padding:8px 14px;border-radius:30px;cursor:pointer;white-space:nowrap;transition:.18s}
+.tabbtn:hover{color:#fff}
+.tabbtn.on{color:#1a1305;background:linear-gradient(135deg,var(--gold2),var(--gold))}
+.bar .reg{margin-left:6px}
 
-section{padding:70px 0}
-.sec-h{text-align:center;margin-bottom:40px}
-.sec-h h2{font-family:'Cormorant Garamond',serif;font-size:40px;font-weight:600;margin-top:8px}
-.sec-h p{color:var(--ink2);max-width:60ch;margin:12px auto 0}
-.lead{font-family:'Cormorant Garamond',serif;font-size:26px;line-height:1.5;color:var(--ink);max-width:46ch;margin:0 auto;text-align:center;font-weight:500}
+/* panels */
+.panel{display:none;animation:fade .4s ease}
+.panel.on{display:block}
+@keyframes fade{from{opacity:0;transform:translateY(8px)}to{opacity:1;transform:none}}
+.phead{text-align:center;margin-bottom:34px}
+.phead h2{font-family:'Cormorant Garamond',serif;font-size:46px;font-weight:600;margin-top:8px;letter-spacing:-.01em}
+.phead p{color:var(--ink2);max-width:56ch;margin:10px auto 0;font-size:15px}
+.sec{padding:96px 0 80px}
 
-/* value */
-.vps{display:grid;grid-template-columns:1fr 1fr;gap:18px;margin-top:42px}
-.vp{background:var(--card);border:1px solid var(--line);border-radius:18px;padding:24px;display:flex;gap:16px;box-shadow:var(--shadow)}
-.vpi{font-size:30px;flex:none}
-.vp h3{font-size:18px;margin-bottom:5px}
-.vp p{font-size:14px;color:var(--ink2)}
+/* HERO / overview */
+.hero{position:relative;min-height:100vh;display:flex;align-items:center;color:#fff;overflow:hidden;padding:100px 0 60px}
+.hero::before{content:"";position:absolute;inset:0;z-index:-3;background:linear-gradient(155deg,#1f3329 0%,#15241d 45%,#14110b 100%)}
+.hero::after{content:"";position:absolute;inset:0;z-index:-1;background:
+  radial-gradient(820px 480px at 78% 12%,rgba(210,171,99,.30),transparent 58%),
+  radial-gradient(700px 620px at 6% 92%,rgba(44,84,70,.55),transparent 55%)}
+.contour{position:absolute;inset:0;z-index:-2;opacity:.16;background-image:radial-gradient(circle at 80% 20%,transparent 0,transparent 38%,rgba(210,171,99,.5) 38.4%,transparent 39%),radial-gradient(circle at 80% 20%,transparent 0,transparent 48%,rgba(210,171,99,.4) 48.4%,transparent 49%),radial-gradient(circle at 80% 20%,transparent 0,transparent 58%,rgba(210,171,99,.3) 58.4%,transparent 59%),radial-gradient(circle at 80% 20%,transparent 0,transparent 70%,rgba(210,171,99,.25) 70.4%,transparent 71%)}
+.hero .eyebrow{margin-bottom:20px}
+.hero h1{font-family:'Cormorant Garamond',serif;font-weight:700;font-size:clamp(46px,8vw,86px);line-height:.98;letter-spacing:-.025em;max-width:13ch}
+.hero .tag{font-family:'Cormorant Garamond',serif;font-style:italic;font-size:clamp(20px,3.4vw,28px);color:#ecdcbd;margin:18px 0 30px;max-width:32ch}
+.cta-row{display:flex;gap:12px;flex-wrap:wrap}
+.statrow{display:flex;gap:0;margin-top:42px;border-top:1px solid rgba(255,255,255,.16);border-bottom:1px solid rgba(255,255,255,.16);max-width:680px}
+.st{flex:1;padding:18px 14px 16px;border-right:1px solid rgba(255,255,255,.12)}
+.st:last-child{border-right:0}
+.sv{font-family:'Cormorant Garamond',serif;font-size:30px;font-weight:600;line-height:1}
+.sk{font-size:10.5px;text-transform:uppercase;letter-spacing:.12em;color:#bcae97;font-weight:700;margin-top:6px}
+.book{display:inline-flex;align-items:center;gap:10px;margin-top:30px;background:rgba(169,128,47,.18);border:1px solid rgba(210,171,99,.45);border-radius:40px;padding:9px 20px;font-size:13.5px;font-weight:600;color:#f2e6cd}
+.book .pulse{width:8px;height:8px;border-radius:50%;background:var(--gold2);animation:pl 2s infinite}
+@keyframes pl{0%{box-shadow:0 0 0 0 rgba(210,171,99,.6)}70%{box-shadow:0 0 0 9px rgba(210,171,99,0)}}
+.scrollcue{position:absolute;bottom:26px;left:50%;transform:translateX(-50%);color:rgba(255,255,255,.5);font-size:11px;letter-spacing:.2em;text-transform:uppercase;font-weight:700}
 
-.band{background:var(--ink);color:#f8f4ec}
-.band .sec-h h2{color:#fff}.band .sec-h p{color:#c6bca d}
+/* value strip in overview */
+.vstrip{background:var(--card);border-top:1px solid var(--line)}
+.vps{display:grid;grid-template-columns:repeat(4,1fr);gap:0}
+.vp{padding:38px 26px;border-right:1px solid var(--line)}
+.vp:last-child{border-right:0}
+.vpi{font-size:26px;margin-bottom:12px}
+.vpt{font-family:'Cormorant Garamond',serif;font-size:21px;font-weight:600;margin-bottom:6px;line-height:1.15}
+.vpx{font-size:13px;color:var(--ink2);line-height:1.5}
 
 /* location */
-.loc{display:grid;grid-template-columns:1.1fr .9fr;gap:26px;align-items:start}
-.mapbox{border-radius:18px;overflow:hidden;border:1px solid var(--line);box-shadow:var(--shadow);height:360px;background:#dfe6e0}
-.mapbox iframe{width:100%;height:100%;border:0;filter:saturate(.9)}
-.maplink{display:inline-block;margin-top:10px;font-size:13px;font-weight:700;color:var(--gold)}
-.amg h4{font-size:12px;text-transform:uppercase;letter-spacing:.1em;color:var(--gold);margin:0 0 8px}
-.amg ul{list-style:none;padding:0;margin:0 0 18px;display:flex;flex-direction:column;gap:7px}
-.amg li{font-size:14px;color:var(--ink2);display:flex;justify-content:space-between;gap:10px;border-bottom:1px solid var(--line);padding-bottom:6px}
-.amg li b{color:var(--ink);font-weight:600}
+.loc{display:grid;grid-template-columns:1.15fr .85fr;gap:30px;align-items:stretch}
+.mapbox{border-radius:20px;overflow:hidden;border:1px solid var(--line);box-shadow:var(--shadow);min-height:420px;background:#dce4dd}
+.mapbox iframe{width:100%;height:100%;border:0;display:block;min-height:420px}
+.maplink{display:inline-block;margin-top:12px;font-size:13px;font-weight:700;color:var(--gold)}
+.amg{display:flex;flex-direction:column;gap:22px}
+.amblock h4{font-size:11px;text-transform:uppercase;letter-spacing:.14em;color:var(--gold);margin-bottom:10px}
+.amrow{display:flex;justify-content:space-between;gap:12px;font-size:14px;padding:8px 0;border-bottom:1px solid var(--line)}
+.amrow b{font-weight:600}.amrow span{color:var(--mut);font-size:13px}
 
-/* dev / facilities */
-.fac{display:flex;flex-wrap:wrap;gap:10px;justify-content:center;max-width:760px;margin:0 auto 8px;list-style:none;padding:0}
-.fac li{background:var(--card);border:1px solid var(--line);border-radius:30px;padding:9px 18px;font-size:14px;font-weight:600}
-.ugrid{display:grid;grid-template-columns:repeat(4,1fr);gap:14px;margin-top:30px}
-.ucard{background:var(--card);border:1px solid var(--line);border-radius:16px;padding:20px;text-align:center;box-shadow:var(--shadow)}
-.ut{font-family:'Cormorant Garamond',serif;font-size:22px;font-weight:600}
-.us{font-size:11px;text-transform:uppercase;letter-spacing:.08em;color:var(--gold);margin:4px 0 8px;font-weight:700}
-.un{font-size:13px;color:var(--ink2)}
+/* residences */
+.resgrid{display:grid;grid-template-columns:1fr 1fr;gap:24px;align-items:center}
+.gal-feat{aspect-ratio:5/4;border-radius:20px;background:linear-gradient(150deg,var(--green),var(--deep));position:relative;overflow:hidden;display:grid;place-items:center;color:rgba(255,255,255,.55);font-size:13px;box-shadow:var(--shadow)}
+.gal-feat::after{content:"";position:absolute;inset:0;background:radial-gradient(300px 200px at 75% 15%,rgba(210,171,99,.4),transparent 60%)}
+.gal-feat span{position:relative;z-index:1;text-align:center;padding:16px}
+.chips{display:flex;flex-wrap:wrap;gap:9px;margin:16px 0 24px}
+.chip{background:var(--cream);border:1px solid var(--line);border-radius:30px;padding:8px 16px;font-size:13px;font-weight:600}
+.ugrid{display:grid;grid-template-columns:repeat(2,1fr);gap:12px}
+.ucard{background:var(--card);border:1px solid var(--line);border-radius:14px;padding:16px 18px;box-shadow:0 4px 16px rgba(20,17,11,.05)}
+.ut{font-family:'Cormorant Garamond',serif;font-size:21px;font-weight:600}
+.un{font-size:12.5px;color:var(--ink2);margin-top:2px}
+.galrow{display:grid;grid-template-columns:repeat(3,1fr);gap:12px;margin-top:30px}
+.gtile{aspect-ratio:4/3;border-radius:14px;display:grid;place-items:center;color:rgba(255,255,255,.6);font-size:11.5px;text-align:center;padding:12px}
+.gtile:nth-child(1){background:linear-gradient(135deg,var(--green),var(--deep))}
+.gtile:nth-child(2){background:linear-gradient(135deg,var(--gold2),var(--gold))}
+.gtile:nth-child(3){background:linear-gradient(135deg,#3a4a44,#14110b)}
 
-/* comps */
-.comps{max-width:680px;margin:30px auto 0;background:var(--card);border:1px solid var(--line);border-radius:18px;padding:26px;box-shadow:var(--shadow)}
-.cbar{display:grid;grid-template-columns:130px 1fr auto;align-items:center;gap:12px;margin-bottom:6px}
-.cn{font-size:13.5px;font-weight:600}
-.ctrack{height:10px;background:var(--cream);border-radius:6px;overflow:hidden}
-.cfill{height:100%;background:linear-gradient(90deg,var(--gold2),var(--gold));border-radius:6px}
-.cv{font-size:14px;font-weight:700;white-space:nowrap}.cv span{font-size:11px;color:var(--mut);font-weight:500;margin-left:2px}
-.cnote{font-size:11.5px;color:var(--mut);margin:-2px 0 12px 142px}
-.comps-note{font-size:12.5px;color:var(--ink2);margin-top:14px;line-height:1.5;border-top:1px solid var(--line);padding-top:14px}
-
-/* calculator */
-.calc{max-width:560px;margin:30px auto 0;background:var(--card);border:1px solid var(--line);border-radius:18px;padding:26px;box-shadow:var(--shadow)}
-.calc .row{display:flex;flex-direction:column;gap:6px;margin-bottom:16px}
-.calc label{font-size:13px;font-weight:700;color:var(--ink2)}
-.calc input,.calc select{border:1px solid var(--line);border-radius:11px;padding:12px 14px;font-size:16px;font-family:inherit}
+/* value tab */
+.valgrid{display:grid;grid-template-columns:1fr 1fr;gap:26px;align-items:start}
+.comps{background:var(--card);border:1px solid var(--line);border-radius:20px;padding:26px;box-shadow:var(--shadow)}
+.cbar{margin-bottom:14px}
+.cn{font-size:12.5px;font-weight:600;margin-bottom:5px}
+.ctrack{position:relative;height:26px;background:var(--cream);border-radius:8px;overflow:hidden;display:flex;align-items:center}
+.cfill{height:100%;background:linear-gradient(90deg,var(--gold2),var(--gold));border-radius:8px;position:absolute;left:0;top:0}
+.cv{position:relative;z-index:1;margin-left:auto;padding-right:11px;font-size:12.5px;font-weight:800;color:#1a1305}
+.comps-note{font-size:12px;color:var(--ink2);margin-top:8px;line-height:1.5}
+.calc{background:var(--card);border:1px solid var(--line);border-radius:20px;padding:26px;box-shadow:var(--shadow)}
+.calc .row{display:flex;flex-direction:column;gap:6px;margin-bottom:14px}
+.calc label{font-size:12.5px;font-weight:700;color:var(--ink2)}
+.calc input,.calc select{border:1px solid var(--line);border-radius:11px;padding:12px 14px;font-size:16px;font-family:inherit;background:var(--cream)}
 .calc input:focus,.calc select:focus{outline:0;border-color:var(--gold)}
-.cres{background:var(--cream);border-radius:14px;padding:18px;margin-top:4px}
-.cres .crow{display:flex;justify-content:space-between;padding:7px 0;border-bottom:1px solid var(--line);font-size:14px}
-.cres .crow:last-child{border-bottom:0}
-.cres .crow b{font-weight:700}
-.cres .hd{font-family:'Cormorant Garamond',serif;font-size:15px;color:var(--gold);font-weight:700;text-transform:uppercase;letter-spacing:.06em;margin-bottom:6px}
-
-/* gallery */
-.gal{display:grid;grid-template-columns:repeat(3,1fr);gap:12px;margin-top:8px}
-.gtile{aspect-ratio:4/3;border-radius:14px;background:linear-gradient(135deg,#2f5d4c,#1c2b24);display:grid;place-items:center;color:rgba(255,255,255,.6);font-size:12px;text-align:center;padding:14px;border:1px solid var(--line)}
-.gtile:nth-child(2){background:linear-gradient(135deg,#caa24f,#8a6322)}
-.gtile:nth-child(3){background:linear-gradient(135deg,#3a4a44,#14120d)}
+.cres{margin-top:6px}
+.crow{display:flex;justify-content:space-between;padding:9px 0;border-bottom:1px solid var(--line);font-size:13.5px}
+.crow:last-child{border-bottom:0;font-weight:700}
+.crow b{font-weight:700}
+.cfine{font-size:11px;color:var(--mut);margin-top:12px;line-height:1.5}
 
 /* register */
-.reg{background:linear-gradient(160deg,#1c2b24,#14120d);color:#fff}
-.reg .sec-h h2{color:#fff}
-.regbox{max-width:520px;margin:0 auto;background:rgba(255,255,255,.04);border:1px solid rgba(255,255,255,.12);border-radius:20px;padding:30px}
-.regbox .f{display:flex;flex-direction:column;gap:6px;margin-bottom:14px}
-.regbox label{font-size:12.5px;font-weight:700;color:#cdbfa6}
-.regbox input,.regbox select{background:rgba(255,255,255,.07);border:1px solid rgba(255,255,255,.18);border-radius:11px;padding:13px 14px;font-size:16px;color:#fff;font-family:inherit}
-.regbox input::placeholder{color:#9a9286}
+.regwrap{display:grid;grid-template-columns:1fr 1fr;gap:30px;align-items:center}
+.regbox{background:var(--card);border:1px solid var(--line);border-radius:22px;padding:30px;box-shadow:var(--shadow)}
+.regbox .f{display:flex;flex-direction:column;gap:6px;margin-bottom:13px}
+.regbox label{font-size:12px;font-weight:700;color:var(--ink2)}
+.regbox input,.regbox select{background:var(--cream);border:1px solid var(--line);border-radius:11px;padding:13px 14px;font-size:16px;font-family:inherit}
 .regbox .btn{width:100%;margin-top:4px}
-.regor{text-align:center;color:#9a9286;font-size:12px;margin:14px 0}
-.regok{display:none;text-align:center;padding:14px;background:rgba(47,93,76,.4);border-radius:12px;color:#dff0e7;font-weight:600}
+.regor{text-align:center;color:var(--mut);font-size:12px;margin:13px 0}
+.regok{display:none;text-align:center;padding:18px;background:rgba(44,84,70,.1);border:1px solid var(--green);border-radius:14px;color:var(--green);font-weight:700}
+.agent{display:flex;align-items:center;gap:18px;background:linear-gradient(150deg,var(--green),var(--deep));color:#fff;border-radius:22px;padding:28px;box-shadow:var(--shadow)}
+.agent .av{width:70px;height:70px;border-radius:50%;background:linear-gradient(135deg,var(--gold2),var(--gold));display:grid;place-items:center;color:#1a1305;font-family:'Cormorant Garamond',serif;font-size:28px;font-weight:700;flex:none}
+.agent .an{font-family:'Cormorant Garamond',serif;font-size:27px;font-weight:600}
+.agent .ar{font-size:13px;color:#bcae97;margin-bottom:14px}
+.agent .acta{display:flex;gap:10px;flex-wrap:wrap}
+.agent .acta a{font-size:13px;font-weight:700;padding:9px 17px;border-radius:30px}
+.a-call{background:rgba(255,255,255,.14);color:#fff}.a-wa{background:#25d366;color:#fff}
 
-/* agent */
-.agent{display:flex;align-items:center;gap:18px;max-width:480px;margin:0 auto;background:var(--card);border:1px solid var(--line);border-radius:18px;padding:22px;box-shadow:var(--shadow)}
-.agent .av{width:64px;height:64px;border-radius:50%;background:linear-gradient(135deg,var(--gold2),var(--gold));display:grid;place-items:center;color:#fff;font-family:'Cormorant Garamond',serif;font-size:26px;font-weight:700;flex:none}
-.agent .an{font-family:'Cormorant Garamond',serif;font-size:24px;font-weight:600}
-.agent .ar{font-size:13px;color:var(--mut)}
-.agent .acta{display:flex;gap:10px;margin-top:10px;flex-wrap:wrap}
-.agent .acta a{font-size:13px;font-weight:700;padding:8px 16px;border-radius:30px}
-.a-call{background:var(--ink);color:#fff}.a-wa{background:#25d366;color:#fff}
+footer{background:var(--ink);color:#938776;padding:34px 0 110px;font-size:11.5px;text-align:center;line-height:1.7}
+footer b{color:#bcae97}
 
-footer{background:var(--ink);color:#9a9286;padding:34px 0 120px;font-size:12px;text-align:center;line-height:1.6}
-footer b{color:#cdbfa6}
-
-/* sticky mobile bar */
-.sticky{position:fixed;left:0;right:0;bottom:0;z-index:50;display:none;gap:10px;padding:11px 14px;background:rgba(20,18,13,.92);backdrop-filter:blur(10px);border-top:1px solid rgba(255,255,255,.1)}
+.sticky{position:fixed;left:0;right:0;bottom:0;z-index:55;display:none;gap:10px;padding:11px 16px;background:rgba(18,15,10,.95);backdrop-filter:blur(12px);border-top:1px solid rgba(255,255,255,.1)}
 .sticky a{flex:1;text-align:center;padding:13px;border-radius:30px;font-weight:700;font-size:14px}
 
-@media(max-width:820px){
-  .hero h1{font-size:42px}.hero .tag{font-size:20px}
-  .vps,.loc,.ugrid,.gal{grid-template-columns:1fr}
-  .badges{grid-template-columns:repeat(2,1fr)}
-  .sec-h h2{font-size:32px}
-  .cbar{grid-template-columns:96px 1fr auto}.cnote{margin-left:108px}
-  .sticky{display:flex}
-  footer{padding-bottom:90px}
+@media(max-width:860px){
+  .bar{padding:12px 16px;gap:10px}.brand small{display:none}.bar .reg{display:none}
+  .vps{grid-template-columns:1fr 1fr}.vp:nth-child(2){border-right:0}.vp:nth-child(1),.vp:nth-child(2){border-bottom:1px solid var(--line)}
+  .loc,.resgrid,.valgrid,.regwrap{grid-template-columns:1fr;gap:20px}
+  .galrow{grid-template-columns:1fr 1fr}.gtile:nth-child(3){display:none}
+  .sec{padding:84px 0 70px}.phead h2{font-size:34px}
+  .sticky{display:flex}footer{padding-bottom:84px}
+  .resgrid .gal-feat{order:-1}
 }
 </style>
 </head>
 <body>
 
-<header class="hero">
-  <div class="wrap">
-    <div class="eyebrow">New Launch · District 26 · Lentor</div>
-    <h1 class="serif">Lentor Gardens Residences</h1>
-    <p class="tag">The keenest entry into Lentor&#x27;s proven growth story.</p>
-    <div class="cta-row">
-      <a class="btn btn-g" href="#register">Register for VVIP Preview</a>
-      <a class="btn btn-o" href="https://wa.me/6593864036?text=Hi%20Kiwi%20Lim,%20I&#x27;m%20keen%20on%20Lentor%20Gardens%20Residences%20—%20please%20send%20me%20details." target="_blank" rel="noopener">WhatsApp Kiwi</a>
+<div class="bar" id="bar">
+  <div class="brand">Lentor Gardens<small>Lentor / Upper Thomson</small></div>
+  <div class="tabs" id="tabs">
+    <button class="tabbtn on" data-t="overview" onclick="tab('overview')">Overview</button>
+    <button class="tabbtn" data-t="location" onclick="tab('location')">Location</button>
+    <button class="tabbtn" data-t="residences" onclick="tab('residences')">Residences</button>
+    <button class="tabbtn" data-t="value" onclick="tab('value')">Value</button>
+    <button class="tabbtn" data-t="register" onclick="tab('register')">Register</button>
+  </div>
+  <button class="btn btn-g reg" onclick="tab('register')" style="padding:10px 18px;font-size:13px">VVIP Preview</button>
+</div>
+
+<!-- OVERVIEW -->
+<section class="panel on" id="t-overview">
+  <div class="hero">
+    <div class="contour"></div>
+    <div class="wrap">
+      <div class="eyebrow">New Launch · District 26 · Lentor</div>
+      <h1 class="serif">Lentor Gardens Residences</h1>
+      <p class="tag">The keenest entry into Lentor&#x27;s proven growth story.</p>
+      <div class="cta-row">
+        <a class="btn btn-g" onclick="tab('register')">Register for VVIP Preview</a>
+        <a class="btn btn-o" href="https://wa.me/6593864036?text=Hi%20Kiwi%20Lim,%20I&#x27;m%20keen%20on%20Lentor%20Gardens%20Residences%20—%20please%20send%20me%20details." target="_blank" rel="noopener">WhatsApp Kiwi</a>
+      </div>
+      <div class="statrow"><div class="st"><div class="sv">99-yr</div><div class="sk">Tenure</div></div><div class="st"><div class="sv">499</div><div class="sk">Homes</div></div><div class="st"><div class="sv">2 to 5BR</div><div class="sk">Bedrooms</div></div><div class="st"><div class="sv">5 min</div><div class="sk">To MRT</div></div></div>
+      <div class="book"><span class="pulse"></span>Booking Day · <b style="color:#fff;margin:0 3px">18 July 2026</b> · <span id="cd"></span></div>
     </div>
-    <div class="badges"><div class="badge"><div class="bk">Tenure</div><div class="bv">99-yr LH</div></div><div class="badge"><div class="bk">Units</div><div class="bv">499</div></div><div class="badge"><div class="bk">Homes</div><div class="bv">2 to 5-Bedroom + strata terraces</div></div><div class="badge"><div class="bk">To MRT</div><div class="bv">5-min walk</div></div></div>
-    <div class="book"><span class="pulse"></span>Booking Day · <b style="margin-left:4px">18 July 2026</b> &nbsp;·&nbsp; <span id="cd"></span></div>
+    <div class="scrollcue">Why Lentor ↓</div>
   </div>
-</header>
-
-<section>
-  <div class="wrap"><p class="lead">Lentor has quietly become one of Singapore&#x27;s most sought-after new private estates — seven launches, consistently strong take-up, and resale already climbing well past launch prices. Lentor Gardens Residences is the latest chapter: a 499-home development by Kingsford, minutes on foot from Lentor MRT, wrapped in parks and reputable schools — and sitting on the most keenly-priced land of the entire Lentor cycle.</p></div>
+  <div class="vstrip"><div class="wrap" style="padding:0"><div class="vps"><div class="vp"><div class="vpi">📉</div><div class="vpt">Cheapest land in the Lentor cycle</div><div class="vpx">Built on a $920 psf ppr site — the lowest land cost of all seven Lentor launches. Nearby projects already resell at $2,200–2,900 psf.</div></div><div class="vp"><div class="vpi">🚆</div><div class="vpt">5 minutes to Lentor MRT</div><div class="vpx">Thomson–East Coast Line (TE5) on your doorstep — direct to Orchard, Marina Bay and the future Founders&#x27; Memorial.</div></div><div class="vp"><div class="vpi">🌳</div><div class="vpt">Wrapped in green</div><div class="vpx">Lentor Hillock Park opens right at your door, with Thomson Nature Park and the Central Catchment Reserve close by.</div></div><div class="vp"><div class="vpi">🎓</div><div class="vpt">Schools at the doorstep</div><div class="vpx">CHIJ St Nicholas Girls&#x27;, Anderson Primary, Presbyterian High and Mayflower Primary all within reach.</div></div></div></div></div>
+  <div class="wrap" style="padding:46px 26px 70px"><p class="serif" style="font-size:24px;line-height:1.55;text-align:center;max-width:50ch;margin:0 auto;color:var(--ink)">Lentor has quietly become one of Singapore&#x27;s most sought-after new private estates — seven launches, consistently strong take-up, and resale already climbing well past launch prices. Lentor Gardens Residences is the latest chapter: a 499-home development by Kingsford, minutes on foot from Lentor MRT, wrapped in parks and reputable schools — and sitting on the most keenly-priced land of the entire Lentor cycle.</p></div>
 </section>
 
-<section style="padding-top:0">
+<!-- LOCATION -->
+<section class="panel sec" id="t-location">
   <div class="wrap">
-    <div class="sec-h"><div class="eyebrow">Why Lentor Gardens</div><h2 class="serif">Four reasons it stands out</h2></div>
-    <div class="vps"><div class="vp"><div class="vpi">📉</div><div><h3>Cheapest land in the Lentor cycle</h3><p>Built on a $920 psf ppr site — the lowest land cost of all seven Lentor launches. Nearby projects already resell at $2,200–2,900 psf.</p></div></div><div class="vp"><div class="vpi">🚆</div><div><h3>5 minutes to Lentor MRT</h3><p>Thomson–East Coast Line (TE5) on your doorstep — direct to Orchard, Marina Bay and the future Founders&#x27; Memorial.</p></div></div><div class="vp"><div class="vpi">🌳</div><div><h3>Wrapped in green</h3><p>Lentor Hillock Park opens right at your door, with Thomson Nature Park and the Central Catchment Reserve close by.</p></div></div><div class="vp"><div class="vpi">🎓</div><div><h3>Schools at the doorstep</h3><p>CHIJ St Nicholas Girls&#x27;, Anderson Primary, Presbyterian High and Mayflower Primary all within reach.</p></div></div></div>
-  </div>
-</section>
-
-<section class="band">
-  <div class="wrap">
-    <div class="sec-h"><div class="eyebrow">The address</div><h2 class="serif">Connected, green, and grounded</h2>
-      <p>Five minutes to the MRT, parks at the doorstep, and some of the North's best schools around the corner.</p></div>
+    <div class="phead"><div class="eyebrow">The address</div><h2 class="serif">Connected, green, grounded</h2>
+      <p>Five minutes to the MRT, parks at the doorstep, top schools around the corner.</p></div>
     <div class="loc">
       <div><div class="mapbox"><iframe loading="lazy" src="https://www.openstreetmap.org/export/embed.html?bbox=103.82650000000001,1.3795,103.8425,1.3915&layer=mapnik&marker=1.3855,103.8345"></iframe></div>
         <a class="maplink" href="https://www.google.com/maps/search/?api=1&query=1.3855,103.8345" target="_blank" rel="noopener">📍 Open in Google Maps →</a></div>
-      <div class="amg" style="color:#e9dcc2">
-        <h4>Transport</h4><ul><li><b>Lentor MRT (TE5)</b><span>~5 min walk</span></li><li><b>Orchard</b><span>~6 stops</span></li><li><b>CTE / SLE</b><span>quick drive</span></li></ul>
-        <h4>Schools</h4><ul><li><b>CHIJ St Nicholas Girls'</b></li><li><b>Anderson Primary</b></li><li><b>Presbyterian High</b></li><li><b>Mayflower Primary</b></li></ul>
-        <h4>Lifestyle &amp; nature</h4><ul><li><b>Lentor Modern mall</b><span>dining, groceries</span></li><li><b>Lentor Hillock Park</b><span>at the doorstep</span></li><li><b>Thomson Nature Park</b></li></ul>
+      <div class="amg">
+        <div class="amblock"><h4>Transport</h4>
+          <div class="amrow"><b>Lentor MRT (TE5)</b><span>~5 min walk</span></div>
+          <div class="amrow"><b>Orchard</b><span>~6 stops</span></div>
+          <div class="amrow"><b>CTE / SLE</b><span>quick drive</span></div></div>
+        <div class="amblock"><h4>Schools</h4>
+          <div class="amrow"><b>CHIJ St Nicholas Girls'</b></div>
+          <div class="amrow"><b>Anderson Primary</b></div>
+          <div class="amrow"><b>Presbyterian High</b></div></div>
+        <div class="amblock"><h4>Lifestyle &amp; nature</h4>
+          <div class="amrow"><b>Lentor Modern mall</b><span>dining, groceries</span></div>
+          <div class="amrow"><b>Lentor Hillock Park</b><span>at the doorstep</span></div>
+          <div class="amrow"><b>Thomson Nature Park</b></div></div>
       </div>
     </div>
   </div>
 </section>
 
-<section>
+<!-- RESIDENCES -->
+<section class="panel sec" id="t-residences">
   <div class="wrap">
-    <div class="sec-h"><div class="eyebrow">The development</div><h2 class="serif">499 homes by Kingsford</h2>
+    <div class="phead"><div class="eyebrow">The development</div><h2 class="serif">499 homes by Kingsford</h2>
       <p>4 blocks · three 16-storey towers + one 8-storey block · ≈ 222,000 sqft site.</p></div>
-    <ul class="fac"><li>50m lap pool</li><li>Fully-equipped gym</li><li>Childcare centre</li><li>3 retail shops</li><li>Lush landscaped grounds</li><li>Sky &amp; social spaces</li></ul>
-    <div class="ugrid"><div class="ucard"><div class="ut">2-Bedroom</div><div class="us">Indicative</div><div class="un">Efficient layouts — ideal first home or rental</div></div><div class="ucard"><div class="ut">3-Bedroom</div><div class="us">Indicative</div><div class="un">The family sweet spot in Lentor</div></div><div class="ucard"><div class="ut">4-Bedroom</div><div class="us">Indicative</div><div class="un">Generous family living</div></div><div class="ucard"><div class="ut">5-BR / Strata Terrace</div><div class="us">Indicative</div><div class="un">Rare landed-style homes within a condo</div></div></div>
-  </div>
-</section>
-
-<section class="band">
-  <div class="wrap">
-    <div class="sec-h"><div class="eyebrow">The value case</div><h2 class="serif">Priced to enter a proven precinct</h2>
-      <p>Lentor Gardens sits on the cheapest land of the cycle — here's where its neighbours are transacting.</p></div>
-    <div class="comps"><div class="cbar"><div class="cn">Lentor Mansion</div><div class="ctrack"><div class="cfill" style="width:100%"></div></div><div class="cv">$2,274<span>psf</span></div></div><div class="cnote">98.5% sold</div><div class="cbar"><div class="cn">Lentor Modern</div><div class="ctrack"><div class="cfill" style="width:98%"></div></div><div class="cv">$2,231<span>psf</span></div></div><div class="cnote">resale now $2,240–2,755</div><div class="cbar"><div class="cn">Hillock Green</div><div class="ctrack"><div class="cfill" style="width:95%"></div></div><div class="cv">$2,165<span>psf</span></div></div><div class="cbar"><div class="cn">Lentoria</div><div class="ctrack"><div class="cfill" style="width:94%"></div></div><div class="cv">$2,142<span>psf</span></div></div><div class="cbar"><div class="cn">Lentor Hills Residences</div><div class="ctrack"><div class="cfill" style="width:94%"></div></div><div class="cv">$2,140<span>psf</span></div></div><div class="comps-note">Average transacted PSF of recent Lentor launches (2024). Resale across the precinct now ranges roughly $2,200–2,900 psf — the context for Lentor Gardens&#x27; entry pricing.</div></div>
-  </div>
-</section>
-
-<section id="calc">
-  <div class="wrap">
-    <div class="sec-h"><div class="eyebrow">What would I pay?</div><h2 class="serif">Your payment, step by step</h2>
-      <p>Worked on an indicative 3-Bedroom around $2.2M. Adjust to your unit. New launches are paid <b>progressively</b> as it's built — not all at once.</p></div>
-    <div class="calc">
-      <div class="row"><label>Indicative purchase price (S$)</label><input id="cprice" type="text" inputmode="numeric" value="2,200,000"></div>
-      <div class="row"><label>Your loan</label><select id="cltv"><option value="0.75">75% loan (first home)</option><option value="0.55">55% loan</option><option value="0.45">45% loan (2nd property)</option></select></div>
-      <div class="cres" id="cres"></div>
-      <p style="font-size:11.5px;color:var(--mut);margin-top:12px">Indicative only — based on standard progressive-payment stages and a 25-year loan at ~3.5%. Confirm with the developer and your banker.</p>
-    </div>
-  </div>
-</section>
-
-<section>
-  <div class="wrap">
-    <div class="sec-h"><div class="eyebrow">The vision</div><h2 class="serif">A first look</h2></div>
-    <div class="gal"><div class="gtile">Artist's impression<br>coming soon</div><div class="gtile">Showflat<br>preview soon</div><div class="gtile">Facilities<br>preview soon</div></div>
-    <p style="text-align:center;font-size:12px;color:var(--mut);margin-top:14px">Official renders &amp; floor plans released at preview — register to receive them first.</p>
-  </div>
-</section>
-
-<section class="reg" id="register">
-  <div class="wrap">
-    <div class="sec-h"><div class="eyebrow">Priority access</div><h2 class="serif">Register for VVIP Preview</h2>
-      <p style="color:#c6bcad">Get the price list, floor plans and earliest choice of units — before public launch on 18 July 2026.</p></div>
-    <div class="regbox">
-      <div id="regform">
-        <div class="f"><label>Name</label><input id="rname" placeholder="Your name"></div>
-        <div class="f"><label>Mobile</label><input id="rphone" inputmode="tel" placeholder="e.g. 9123 4567"></div>
-        <div class="f"><label>Interested in</label><select id="runit"><option value="">Any unit type</option><option>2-Bedroom</option><option>3-Bedroom</option><option>4-Bedroom</option><option>5-BR / Strata Terrace</option></select></div>
-        <button class="btn btn-g" id="rsubmit">Request VVIP Preview →</button>
-        <div class="regor">— or —</div>
-        <a class="btn btn-wa" style="width:100%" href="https://wa.me/6593864036?text=Hi%20Kiwi%20Lim,%20I&#x27;m%20keen%20on%20Lentor%20Gardens%20Residences%20—%20please%20send%20me%20details." target="_blank" rel="noopener">WhatsApp Kiwi Lim now</a>
-      </div>
-      <div class="regok" id="regok">✓ Thank you — Kiwi will be in touch shortly with the preview details.</div>
-    </div>
-  </div>
-</section>
-
-<section style="padding-top:0">
-  <div class="wrap">
-    <div class="agent">
-      <div class="av">KL</div>
+    <div class="resgrid">
+      <div class="gal-feat"><span>Artist's impression<br>released at preview</span></div>
       <div>
-        <div class="an">Kiwi Lim</div>
-        <div class="ar">Your Lentor Gardens specialist</div>
-        <div class="acta"><a class="a-call" href="tel:+6593864036">📞 9386 4036</a><a class="a-wa" href="https://wa.me/6593864036?text=Hi%20Kiwi%20Lim,%20I&#x27;m%20keen%20on%20Lentor%20Gardens%20Residences%20—%20please%20send%20me%20details." target="_blank" rel="noopener">WhatsApp</a></div>
+        <div class="eyebrow" style="color:var(--ink2)">Facilities</div>
+        <div class="chips"><span class="chip">50m lap pool</span><span class="chip">Fully-equipped gym</span><span class="chip">Childcare centre</span><span class="chip">3 retail shops</span><span class="chip">Lush landscaped grounds</span><span class="chip">Sky &amp; social spaces</span></div>
+        <div class="eyebrow" style="color:var(--ink2)">Home types</div>
+        <div class="ugrid" style="margin-top:14px"><div class="ucard"><div class="ut">2-Bedroom</div><div class="un">Efficient layouts — ideal first home or rental</div></div><div class="ucard"><div class="ut">3-Bedroom</div><div class="un">The family sweet spot in Lentor</div></div><div class="ucard"><div class="ut">4-Bedroom</div><div class="un">Generous family living</div></div><div class="ucard"><div class="ut">5-BR / Strata Terrace</div><div class="un">Rare landed-style homes within a condo</div></div></div>
+      </div>
+    </div>
+    <div class="galrow"><div class="gtile">Showflat<br>preview soon</div><div class="gtile">Facilities deck<br>preview soon</div><div class="gtile">Skyline view<br>preview soon</div></div>
+  </div>
+</section>
+
+<!-- VALUE -->
+<section class="panel sec" id="t-value">
+  <div class="wrap">
+    <div class="phead"><div class="eyebrow">The value case</div><h2 class="serif">Priced to enter a proven precinct</h2>
+      <p>Worked on an indicative 3-Bedroom around $2.2M. Adjust to your unit. New launches are paid <b>progressively</b> as they're built.</p></div>
+    <div class="valgrid">
+      <div class="comps"><div class="eyebrow" style="color:var(--ink2);margin-bottom:16px">Recent Lentor launches · avg PSF</div><div class="cbar"><div class="cn">Lentor Mansion · 98.5% sold</div><div class="ctrack"><div class="cfill" style="width:100%"></div><span class="cv">$2,274</span></div></div><div class="cbar"><div class="cn">Lentor Modern · resale now $2,240–2,755</div><div class="ctrack"><div class="cfill" style="width:98%"></div><span class="cv">$2,231</span></div></div><div class="cbar"><div class="cn">Hillock Green</div><div class="ctrack"><div class="cfill" style="width:95%"></div><span class="cv">$2,165</span></div></div><div class="cbar"><div class="cn">Lentoria</div><div class="ctrack"><div class="cfill" style="width:94%"></div><span class="cv">$2,142</span></div></div><div class="cbar"><div class="cn">Lentor Hills Residences</div><div class="ctrack"><div class="cfill" style="width:94%"></div><span class="cv">$2,140</span></div></div><div class="comps-note">Average transacted PSF of recent Lentor launches (2024). Resale across the precinct now ranges roughly $2,200–2,900 psf — the context for Lentor Gardens&#x27; entry pricing.</div></div>
+      <div class="calc">
+        <div class="eyebrow" style="color:var(--ink2);margin-bottom:14px">Your payment, step by step</div>
+        <div class="row"><label>Indicative price (S$)</label><input id="cprice" type="text" inputmode="numeric" value="2,200,000"></div>
+        <div class="row"><label>Your loan</label><select id="cltv"><option value="0.75">75% loan (first home)</option><option value="0.55">55% loan</option><option value="0.45">45% loan (2nd property)</option></select></div>
+        <div class="cres" id="cres"></div>
+        <p class="cfine">Indicative — standard progressive-payment stages, 25-yr loan ~3.5%. Confirm with the developer &amp; your banker.</p>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- REGISTER -->
+<section class="panel sec" id="t-register">
+  <div class="wrap">
+    <div class="phead"><div class="eyebrow">Priority access</div><h2 class="serif">Register for VVIP Preview</h2>
+      <p>Get the price list, floor plans &amp; earliest choice of units — before public launch on 18 July 2026.</p></div>
+    <div class="regwrap">
+      <div class="regbox">
+        <div id="regform">
+          <div class="f"><label>Name</label><input id="rname" placeholder="Your name"></div>
+          <div class="f"><label>Mobile</label><input id="rphone" inputmode="tel" placeholder="e.g. 9123 4567"></div>
+          <div class="f"><label>Interested in</label><select id="runit"><option value="">Any unit type</option><option>2-Bedroom</option><option>3-Bedroom</option><option>4-Bedroom</option><option>5-BR / Strata Terrace</option></select></div>
+          <button class="btn btn-g" id="rsubmit">Request VVIP Preview →</button>
+          <div class="regor">— or —</div>
+          <a class="btn btn-wa" style="width:100%" href="https://wa.me/6593864036?text=Hi%20Kiwi%20Lim,%20I&#x27;m%20keen%20on%20Lentor%20Gardens%20Residences%20—%20please%20send%20me%20details." target="_blank" rel="noopener">WhatsApp Kiwi Lim</a>
+        </div>
+        <div class="regok" id="regok">✓ Thank you — Kiwi will be in touch shortly with the preview details.</div>
+      </div>
+      <div class="agent">
+        <div class="av">KL</div>
+        <div>
+          <div class="an">Kiwi Lim</div>
+          <div class="ar">Your Lentor Gardens specialist</div>
+          <div class="acta"><a class="a-call" href="tel:+6593864036">📞 9386 4036</a><a class="a-wa" href="https://wa.me/6593864036?text=Hi%20Kiwi%20Lim,%20I&#x27;m%20keen%20on%20Lentor%20Gardens%20Residences%20—%20please%20send%20me%20details." target="_blank" rel="noopener">WhatsApp</a></div>
+        </div>
       </div>
     </div>
   </div>
 </section>
 
 <footer>
-  <div class="wrap">
-    <b>Lentor Gardens Residences</b> · Kingsford Development · 99-year leasehold · District 26<br>
-    By Kingsford Development — the team behind Normanton Park, Kingsford Waterbay and Kingsford Hillview Peak.<br><br>
-    All information is indicative and subject to change — pricing, unit mix, sizes and TOP to be confirmed by the developer. Images are artist's impressions. Not an offer or contract. Prepared by Kiwi Lim.
-  </div>
+  <div class="wrap"><b>Lentor Gardens Residences</b> · Kingsford Development · 99-year leasehold · District 26<br>
+  By Kingsford Development — the team behind Normanton Park, Kingsford Waterbay and Kingsford Hillview Peak.<br><br>
+  Indicative information, subject to change — pricing, unit mix, sizes &amp; TOP to be confirmed by the developer. Images are artist's impressions. Not an offer or contract. Prepared by Kiwi Lim.</div>
 </footer>
 
 <div class="sticky">
   <a class="btn-wa" href="https://wa.me/6593864036?text=Hi%20Kiwi%20Lim,%20I&#x27;m%20keen%20on%20Lentor%20Gardens%20Residences%20—%20please%20send%20me%20details." target="_blank" rel="noopener">WhatsApp</a>
-  <a class="btn-g" href="#register">Register Preview</a>
+  <a class="btn-g" onclick="tab('register')">Register Preview</a>
 </div>
 
 <script>
 var SB_URL="https://fnwixchhnonmsoxtsntu.supabase.co",SB_KEY="sb_publishable_e_1fT6HAAmsopEY31rVgOw_f8zJCro_",PROJECT="Lentor Gardens Residences";
+function tab(id){
+  document.querySelectorAll('.panel').forEach(function(p){p.classList.toggle('on',p.id==='t-'+id);});
+  document.querySelectorAll('.tabbtn').forEach(function(b){b.classList.toggle('on',b.dataset.t===id);});
+  document.getElementById('bar').classList.toggle('solid',id!=='overview');
+  window.scrollTo({top:0,behavior:'instant'});
+}
+window.addEventListener('scroll',function(){document.getElementById('bar').classList.toggle('solid',window.scrollY>40||!document.getElementById('t-overview').classList.contains('on'));});
 function nf(n){return n.toLocaleString('en-SG');}
 function money(n){return '$'+Math.round(n).toLocaleString('en-SG');}
-// progressive payment stages
-var STAGES=[['Booking (OTP)',5],['Signing of S&P',15],['Foundation',10],['Concrete framework',10],['Walls',5],['Roof / ceiling',5],['Doors, windows, M&E',5],['Carpark & drains',5],['TOP — keys',25],['CSC',15]];
 function pmt(P,r,y){var i=r/12,n=y*12;return i?P*i/(1-Math.pow(1+i,-n)):P/n;}
+function bsd(p){var t=[[180000,.01],[180000,.02],[640000,.03],[500000,.04],[1500000,.05],[1e12,.06]],r=0,l=p;for(var i=0;i<t.length;i++){var x=Math.min(l,t[i][0]);r+=x*t[i][1];l-=x;if(l<=0)break;}return Math.floor(r);}
 function calc(){
-  var el=document.getElementById('cprice');var p=parseFloat(el.value.replace(/[^0-9]/g,''))||0;
-  el.value=p?nf(p):'';
-  var ltv=parseFloat(document.getElementById('cltv').value);
-  var down=Math.round((1-ltv)*100),loan=p*ltv,monthly=pmt(loan,0.035,25);
-  var h='<div class="hd">If you buy at '+money(p)+'</div>';
-  h+='<div class="crow"><span>Cash / CPF before loan ('+down+'%)</span><b>'+money(p*(1-ltv))+'</b></div>';
+  var el=document.getElementById('cprice');var p=parseFloat(el.value.replace(/[^0-9]/g,''))||0;el.value=p?nf(p):'';
+  var ltv=parseFloat(document.getElementById('cltv').value),loan=p*ltv,monthly=pmt(loan,0.035,25);
+  var h='';
+  h+='<div class="crow"><span>Cash / CPF before loan ('+Math.round((1-ltv)*100)+'%)</span><b>'+money(p*(1-ltv))+'</b></div>';
   h+='<div class="crow"><span>↳ Booking fee on the day (5%)</span><b>'+money(p*0.05)+'</b></div>';
   h+='<div class="crow"><span>Bank loan ('+Math.round(ltv*100)+'%)</span><b>'+money(loan)+'</b></div>';
   h+='<div class="crow"><span>Buyer\'s Stamp Duty</span><b>'+money(bsd(p))+'</b></div>';
-  h+='<div class="crow"><span>Est. monthly (when fully drawn)</span><b>'+money(monthly)+'/mo</b></div>';
+  h+='<div class="crow"><span>Est. monthly (fully drawn)</span><b>'+money(monthly)+'/mo</b></div>';
   document.getElementById('cres').innerHTML=h;
 }
-function bsd(p){var t=[[180000,.01],[180000,.02],[640000,.03],[500000,.04],[1500000,.05],[1e12,.06]],r=0,l=p;for(var i=0;i<t.length;i++){var x=Math.min(l,t[i][0]);r+=x*t[i][1];l-=x;if(l<=0)break;}return Math.floor(r);}
 document.getElementById('cprice').addEventListener('input',calc);
 document.getElementById('cltv').addEventListener('change',calc);calc();
-// countdown
-(function(){var d=new Date('2026-07-18T10:00:00+08:00');function t(){var ms=d-new Date(),el=document.getElementById('cd');if(!el)return;if(ms<=0){el.textContent='Now previewing';return;}var days=Math.floor(ms/864e5);el.textContent=days+' day'+(days==1?'':'s')+' to go';}t();})();
-// lead capture
+(function(){var d=new Date('2026-07-18T10:00:00+08:00');var el=document.getElementById('cd');var ms=d-new Date();if(el){el.textContent=ms<=0?'Now previewing':(Math.floor(ms/864e5)+' days to go');}})();
 document.getElementById('rsubmit').addEventListener('click',function(){
   var name=document.getElementById('rname').value.trim(),phone=document.getElementById('rphone').value.trim(),unit=document.getElementById('runit').value;
   if(!name||!phone){alert('Please enter your name and mobile number.');return;}
-  var btn=this;btn.textContent='Sending…';btn.disabled=true;
-  fetch(SB_URL+'/rest/v1/launch_leads',{method:'POST',headers:{'apikey':SB_KEY,'Authorization':'Bearer '+SB_KEY,'Content-Type':'application/json','Prefer':'return=minimal'},body:JSON.stringify({project:PROJECT,name:name,phone:phone,unit_interest:unit||null})})
-  .then(function(r){done();}).catch(function(){done();});
-  function done(){document.getElementById('regform').style.display='none';document.getElementById('regok').style.display='block';}
+  var b=this;b.textContent='Sending…';b.disabled=true;
+  fetch(SB_URL+'/rest/v1/launch_leads',{method:'POST',headers:{'apikey':SB_KEY,'Authorization':'Bearer '+SB_KEY,'Content-Type':'application/json','Prefer':'return=minimal'},body:JSON.stringify({project:PROJECT,name:name,phone:phone,unit_interest:unit||null})}).then(d).catch(d);
+  function d(){document.getElementById('regform').style.display='none';document.getElementById('regok').style.display='block';}
 });
 </script>
 </body>
