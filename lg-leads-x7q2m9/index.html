@@ -37,6 +37,7 @@ td{padding:13px 16px;border-top:1px solid var(--line);vertical-align:top}
 tr:hover td{background:rgba(255,255,255,.03)}
 td.name{font-weight:700;color:#fff}td.phone a{color:var(--gold);font-weight:700;text-decoration:none}
 td.unit{color:#cabfa9}td.time{color:var(--mut);font-size:12.5px;white-space:nowrap}
+td.del{text-align:right;width:1%}.delbtn{background:rgba(255,90,70,.14);border:1px solid rgba(255,90,70,.3);color:#ff9b8a;width:30px;height:30px;border-radius:8px;cursor:pointer;font-size:13px;line-height:1}.delbtn:hover{background:rgba(255,90,70,.28)}
 .empty{text-align:center;color:var(--mut);padding:48px 20px;font-size:15px}
 .note{color:var(--mut);font-size:12px;margin-top:14px;text-align:center}
 @media(max-width:560px){td.proj,th.proj{display:none}.wrap{padding:18px 14px 80px}}
@@ -67,7 +68,7 @@ td.unit{color:#cabfa9}td.time{color:var(--mut);font-size:12.5px;white-space:nowr
   </div>
   <div class="tablewrap">
     <table>
-      <thead><tr><th>Name</th><th>Mobile</th><th>Interested in</th><th class="proj">Project</th><th>When</th></tr></thead>
+      <thead><tr><th>Name</th><th>Mobile</th><th>Interested in</th><th class="proj">Project</th><th>When</th><th></th></tr></thead>
       <tbody id="rows"></tbody>
     </table>
   </div>
@@ -79,7 +80,7 @@ td.unit{color:#cabfa9}td.time{color:var(--mut);font-size:12.5px;white-space:nowr
 var SB_URL="https://fnwixchhnonmsoxtsntu.supabase.co";
 var ANON="sb_publishable_e_1fT6HAAmsopEY31rVgOw_f8zJCro_";
 var PW_STORE="lg_pw";
-var leads=[];
+var leads=[],currentPw="";
 
 function show(dash){document.getElementById('gate').classList.toggle('hidden',dash);document.getElementById('dash').classList.toggle('hidden',!dash);}
 function esc(s){return (s==null?"":String(s)).replace(/[&<>"]/g,function(c){return{'&':'&amp;','<':'&lt;','>':'&gt;','"':'&quot;'}[c];});}
@@ -101,7 +102,7 @@ function open(pw,fromSaved){
   fetchLeads(pw).then(function(data){
     leads=Array.isArray(data)?data:[];
     leads.sort(function(a,b){return new Date(b.created_at||b.inserted_at||0)-new Date(a.created_at||a.inserted_at||0);});
-    localStorage.setItem(PW_STORE,pw);render();show(true);
+    currentPw=pw;localStorage.setItem(PW_STORE,pw);render();show(true);
   }).catch(function(e){
     localStorage.removeItem(PW_STORE);show(false);
     document.getElementById('gateerr').textContent = e.message==="setup"
@@ -121,7 +122,8 @@ function render(){
       "<td class='phone'>"+(ph?"<a href='tel:"+ph.replace(/[^0-9+]/g,'')+"'>"+ph+"</a>":"—")+"</td>"+
       "<td class='unit'>"+esc(l.unit_interest||"Any")+"</td>"+
       "<td class='proj'>"+esc(l.project||"—")+"</td>"+
-      "<td class='time'>"+fmt(l.created_at||l.inserted_at)+"</td></tr>";
+      "<td class='time'>"+fmt(l.created_at||l.inserted_at)+"</td>"+
+      "<td class='del'><button class='delbtn' data-id='"+esc(l.id)+"' title='Delete lead'>✕</button></td></tr>";
   }).join("");
 }
 
@@ -140,6 +142,15 @@ document.getElementById('unlock').addEventListener('click',function(){
 document.getElementById('pwin').addEventListener('keydown',function(e){if(e.key==='Enter')document.getElementById('unlock').click();});
 document.getElementById('refresh').addEventListener('click',function(){var pw=localStorage.getItem(PW_STORE);if(pw)open(pw,true);});
 document.getElementById('csv').addEventListener('click',toCsv);
+document.getElementById('rows').addEventListener('click',function(e){
+  var btn=e.target.closest&&e.target.closest('.delbtn');if(!btn)return;
+  var id=btn.getAttribute('data-id');
+  if(!confirm('Delete this lead permanently?'))return;
+  btn.disabled=true;btn.textContent='…';
+  fetch(SB_URL+"/rest/v1/rpc/delete_lead",{method:"POST",headers:{apikey:ANON,Authorization:"Bearer "+ANON,"Content-Type":"application/json"},body:JSON.stringify({pw:currentPw,lead_id:id})})
+    .then(function(r){if(!r.ok)throw new Error("del");leads=leads.filter(function(l){return String(l.id)!==String(id);});render();})
+    .catch(function(){btn.disabled=false;btn.textContent='✕';alert("Couldn't delete — run the delete_lead SQL in Supabase once, then try again.");});
+});
 function lock(){localStorage.removeItem(PW_STORE);leads=[];show(false);document.getElementById('pwin').value="";}
 document.getElementById('signout').addEventListener('click',lock);
 document.getElementById('lock2').addEventListener('click',function(e){e.preventDefault();lock();});
