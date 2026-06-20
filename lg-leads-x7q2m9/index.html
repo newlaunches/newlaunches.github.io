@@ -6,6 +6,13 @@
 <meta name="robots" content="noindex,nofollow">
 <title>Lead Tracker</title>
 <link rel="icon" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 32 32'%3E%3Crect width='32' height='32' rx='7' fill='%2313241c'/%3E%3Cpath d='M16 6l8 7v13h-5v-7h-6v7H8V13z' fill='%23d8b878'/%3E%3C/svg%3E">
+<meta name="theme-color" content="#13241c">
+<link rel="manifest" href="manifest.webmanifest">
+<link rel="apple-touch-icon" href="apple-touch-icon.png">
+<meta name="apple-mobile-web-app-capable" content="yes">
+<meta name="mobile-web-app-capable" content="yes">
+<meta name="apple-mobile-web-app-status-bar-style" content="black">
+<meta name="apple-mobile-web-app-title" content="Leads">
 <link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:wght@600;700&family=Plus+Jakarta+Sans:wght@400;500;600;700;800&display=swap" rel="stylesheet">
 <style>
 :root{--deep:#13241c;--deep2:#0d1813;--gold:#d8b878;--gold2:#a9802f;--cream:#f7f3ea;--line:rgba(255,255,255,.12);--mut:#9a9482}
@@ -157,6 +164,8 @@ document.getElementById('lock2').addEventListener('click',function(e){e.preventD
 
 var saved=localStorage.getItem(PW_STORE);
 if(saved)open(saved,true);else show(false);
+
+if('serviceWorker' in navigator){window.addEventListener('load',function(){navigator.serviceWorker.register('sw.js').catch(function(){});});}
 </script>
 </body>
 </html>
