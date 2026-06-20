@@ -21,6 +21,7 @@
   --cream:#f7f3ea;--card:#fffdf9;
   --ink:#1a1712;--ink2:#5c5347;--mut:#938878;--line:#e7ddcc;
   --shadow:0 22px 60px rgba(20,17,11,.16);--shadow2:0 8px 24px rgba(20,17,11,.08);
+  --pbh:0px;
 }
 *{box-sizing:border-box;margin:0}
 html{scroll-behavior:smooth;-webkit-text-size-adjust:100%}
@@ -49,7 +50,7 @@ body::after{content:"";position:fixed;inset:0;z-index:9998;pointer-events:none;o
 .rv.d1{transition-delay:.08s}.rv.d2{transition-delay:.16s}.rv.d3{transition-delay:.24s}.rv.d4{transition-delay:.32s}
 
 /* NAV */
-.bar{position:fixed;top:0;left:0;right:0;z-index:90;display:flex;align-items:center;gap:18px;padding:16px 28px;
+.bar{position:fixed;top:var(--pbh);left:0;right:0;z-index:90;display:flex;align-items:center;gap:18px;padding:16px 28px;
   background:linear-gradient(180deg,rgba(13,24,19,.55),rgba(13,24,19,0));transition:.35s}
 .bar.solid{background:rgba(13,24,19,.95);backdrop-filter:blur(16px) saturate(1.2);box-shadow:0 1px 0 rgba(255,255,255,.07);padding:11px 28px}
 .brand{font-family:'Cormorant Garamond',serif;font-weight:700;font-size:23px;color:#fff;letter-spacing:.01em;white-space:nowrap;line-height:1}
@@ -90,8 +91,36 @@ body::after{content:"";position:fixed;inset:0;z-index:9998;pointer-events:none;o
 @keyframes cue{0%{opacity:0;transform:scaleY(.3)}50%{opacity:1}100%{opacity:0;transform:scaleY(1) translateY(8px)}}
 
 /* SECTIONS */
-section{position:relative}
+section{position:relative;scroll-margin-top:calc(var(--pbh) + 58px)}
 .sec{padding:80px 0}
+
+/* PRIORITY announcement bar (fixed, top) */
+.pbar{position:fixed;top:0;left:0;right:0;z-index:92;display:flex;align-items:center;justify-content:center;gap:13px;flex-wrap:wrap;
+  background:linear-gradient(100deg,#8a1f12,#b9442a 52%,#a9802f);color:#fff;
+  padding:9px 46px 9px 22px;cursor:pointer;text-align:center;font-size:13.5px;font-weight:600;box-shadow:0 6px 22px rgba(0,0,0,.32)}
+.pbar b{font-weight:800}
+.pbar .pbpulse{width:8px;height:8px;border-radius:50%;background:#ffd9a0;animation:pl2 1.3s infinite;flex:none}
+.pbar .pbgo{background:#fff;color:#8a1f12;border-radius:30px;padding:5px 15px;font-size:12.5px;font-weight:800;white-space:nowrap}
+.pbar .pbx{position:absolute;right:12px;top:50%;transform:translateY(-50%);background:rgba(255,255,255,.22);border:0;color:#fff;width:24px;height:24px;border-radius:50%;font-size:15px;cursor:pointer;line-height:1;display:grid;place-items:center}
+@keyframes pl2{0%,100%{opacity:1}50%{opacity:.3}}
+
+/* PRIORITY section */
+.prio{background:linear-gradient(180deg,#fbf3ea,#f7efe2);border-top:1px solid var(--line);border-bottom:1px solid var(--line)}
+.priocards{display:grid;grid-template-columns:1fr 1fr;gap:22px;margin-top:36px}
+.priocard{background:var(--card);border:1px solid var(--line);border-radius:20px;padding:30px 28px;box-shadow:var(--shadow);position:relative;border-top:3px solid #b9442a}
+.priocard .ptag{position:absolute;top:0;right:22px;background:linear-gradient(135deg,var(--gold2),var(--gold));color:#241803;font-size:10px;font-weight:800;text-transform:uppercase;letter-spacing:.05em;padding:5px 12px;border-radius:0 0 10px 10px}
+.priocard .picon{font-size:38px;line-height:1}
+.priocard h3{font-family:'Cormorant Garamond',serif;font-size:28px;font-weight:600;margin:12px 0 3px;line-height:1.05}
+.priocard .psub{font-size:13.5px;color:var(--ink2);margin-bottom:15px;font-weight:600}
+.pbadges{display:flex;flex-wrap:wrap;gap:8px;margin-bottom:16px}
+.pbadges span{background:var(--green);color:#fff;font-size:12px;font-weight:700;padding:6px 13px;border-radius:30px}
+.pprice{font-family:'Cormorant Garamond',serif;font-size:30px;font-weight:700;color:var(--gold);line-height:1}
+.pprice small{font-family:'Plus Jakarta Sans';font-size:11px;color:var(--mut);font-weight:600}
+.pnote{font-size:12px;color:var(--ink2);margin:11px 0 18px;border-top:1px solid var(--line);padding-top:12px;line-height:1.5}
+.priocard .btn{width:100%}
+.pfine{text-align:center;font-size:12px;color:var(--mut);margin-top:22px;max-width:70ch;margin-left:auto;margin-right:auto}
+.pri-tab{color:#d35740 !important}
+.pri-tab .pdot{display:inline-block;width:7px;height:7px;border-radius:50%;background:#e0563f;margin-right:5px;animation:pl2 1.4s infinite;vertical-align:middle}
 .sec.alt{background:var(--card);border-top:1px solid var(--line);border-bottom:1px solid var(--line)}
 .sec.dark{background:linear-gradient(165deg,var(--deep),var(--deep2));color:#f0e8d6}
 .phead{max-width:60ch}
@@ -240,7 +269,7 @@ footer .fbrand{font-family:'Cormorant Garamond',serif;font-size:24px;color:#f0e8
 
 @media(max-width:980px){
   .sig{grid-template-columns:1fr}
-  .spwrap,.loc,.valgrid,.regwrap{grid-template-columns:1fr;gap:22px}
+  .spwrap,.loc,.valgrid,.regwrap,.priocards{grid-template-columns:1fr;gap:22px}
   .fgrid{grid-template-columns:repeat(3,1fr)}
   .gal{grid-template-columns:repeat(2,1fr);grid-auto-rows:160px}
   .gt.big{grid-column:span 2;grid-row:span 1}
@@ -249,8 +278,9 @@ footer .fbrand{font-family:'Cormorant Garamond',serif;font-size:24px;color:#f0e8
   .nav{display:none}.burger{display:flex}
   .wrap{padding:0 20px}
   .sec{padding:60px 0}
+  .pbar{font-size:12px;gap:9px;padding:8px 40px 8px 16px}.pbar .pbgo{padding:5px 12px}
   /* mobile hero: show the WHOLE render uncropped at top, content on dark-green below */
-  .hero{display:block;min-height:0;align-items:initial;padding:0 0 44px;background:linear-gradient(180deg,#172a20,var(--deep2))}
+  .hero{display:block;min-height:0;align-items:initial;padding:calc(var(--pbh) + 54px) 0 44px;background:linear-gradient(180deg,#172a20,var(--deep2))}
   .hero .bg{position:relative;inset:auto;z-index:1;width:100%;height:auto;aspect-ratio:1646/682;background-size:cover;background-position:center;box-shadow:0 14px 30px rgba(0,0,0,.4)}
   .hero::after{display:none}
   .hero .wrap{padding-top:30px}
@@ -271,10 +301,19 @@ footer .fbrand{font-family:'Cormorant Garamond',serif;font-size:24px;color:#f0e8
 </head>
 <body>
 
+<!-- PRIORITY announcement bar -->
+<a class="pbar" id="pbar" href="#priority">
+  <span class="pbpulse"></span>
+  <span><b>⚡ Priority Sales</b> — rare commercial units &amp; 5BR strata homes, released before Booking Day</span>
+  <span class="pbgo">See the units →</span>
+  <button class="pbx" id="pbx" aria-label="Dismiss" onclick="event.preventDefault();event.stopPropagation();dismissPbar();">×</button>
+</a>
+
 <!-- NAV -->
 <header class="bar" id="bar">
   <div class="brand">Lentor Gardens<small>Residences · by Kingsford</small></div>
   <nav class="nav">
+    <a class="lnk pri-tab" href="#priority"><span class="pdot"></span>Priority</a>
     <a class="lnk" href="#highlights">Highlights</a>
     <a class="lnk" href="#gallery">Gallery</a>
     <a class="lnk" href="#siteplan">Site Plan</a>
@@ -287,6 +326,7 @@ footer .fbrand{font-family:'Cormorant Garamond',serif;font-size:24px;color:#f0e8
 
 <div class="mnav" id="mnav">
   <button class="mx" id="mx" aria-label="Close">×</button>
+  <a href="#priority" style="color:#f0b9ad">⚡ Priority Sales</a>
   <a href="#highlights">Highlights</a>
   <a href="#gallery">Gallery</a>
   <a href="#siteplan">Site Plan</a>
@@ -316,6 +356,38 @@ footer .fbrand{font-family:'Cormorant Garamond',serif;font-size:24px;color:#f0e8
     </div>
   </div>
   <a href="#highlights" class="scrollcue">Scroll</a>
+</section>
+
+<!-- PRIORITY SALES -->
+<section class="sec prio" id="priority">
+  <div class="wrap">
+    <div class="phead ctr rv"><div class="eyebrow" style="color:#c0392b">⚡ Priority Sales · before Booking Day</div>
+      <h2 class="serif">Rare units, released early</h2>
+      <p>Ahead of the public Booking Day, a limited handful of units may be released under Priority Sales — first to enquire, first considered. Speak to Kiwi now to be on the list.</p></div>
+    <div class="priocards">
+      <div class="priocard rv d1">
+        <div class="ptag">Investors &amp; foreigners</div>
+        <div class="picon">🏪</div>
+        <h3>3 Commercial Units</h3>
+        <div class="psub">463 sq ft each · ground-floor retail</div>
+        <div class="pbadges"><span>No ABSD</span><span>No SSD</span><span>Foreigners can buy</span></div>
+        <div class="pprice">Indicative ≈ $1.2M <small>each</small></div>
+        <div class="pnote">GST is payable on commercial units. BSD still applies · CPF cannot be used · commercial loan terms differ.</div>
+        <a class="btn btn-g" href="https://wa.me/6593864036?text=Hi%20Kiwi%20Lim%2C%20I'm%20keen%20on%20the%20Lentor%20Gardens%20PRIORITY%20commercial%20units%20—%20please%20send%20details." target="_blank" rel="noopener">Enquire — priority units →</a>
+      </div>
+      <div class="priocard rv d2">
+        <div class="ptag">Larger families</div>
+        <div class="picon">🏡</div>
+        <h3>3 Strata Landed Homes</h3>
+        <div class="psub">1,496 sq ft · 5 Bedrooms</div>
+        <div class="pbadges"><span>Landed-style living</span><span>Only 3 in the project</span><span>Rare 5BR</span></div>
+        <div class="pprice">Pricing on enquiry</div>
+        <div class="pnote">Strata landed homes within a full-facility condo — the only homes of their kind in the Lentor enclave. Very limited.</div>
+        <a class="btn btn-g" href="https://wa.me/6593864036?text=Hi%20Kiwi%20Lim%2C%20I'm%20keen%20on%20the%20Lentor%20Gardens%20PRIORITY%205BR%20strata%20landed%20homes%20—%20please%20send%20details." target="_blank" rel="noopener">Enquire — priority units →</a>
+      </div>
+    </div>
+    <p class="pfine">Priority units are limited and may be allocated before the public launch — enquire or message Kiwi to be considered first. Pricing is indicative and subject to developer confirmation.</p>
+  </div>
 </section>
 
 <!-- INTRO -->
@@ -580,9 +652,9 @@ var UNITS=[
  {g:'4',t:'4BR C2',c:'4-Bedroom Compact',ft:1184,m:110,f:'fp-4br-c2',st:'#01-12→#16-12 · #01-17→#16-17 · #01-18→#16-18'},
  {g:'4',t:'4BR P1',c:'4-Bedroom Premium',ft:1356,m:126,f:'fp-4br-p1',st:'#01-32→#16-32'},
  {g:'4',t:'4BR P2',c:'4-Bedroom Premium',ft:1346,m:125,f:'fp-4br-p2',st:'#01-23→#16-23 · #01-27→#16-27 (mirror)'},
- {g:'t',t:'Terrace 1',c:'Strata Terrace House · multi-level',ft:1496,m:139,f:'fp-terrace-1',st:'Block #72'},
- {g:'t',t:'Terrace 2',c:'Strata Terrace House · multi-level',ft:1496,m:139,f:'fp-terrace-2',st:'Block #70'},
- {g:'t',t:'Terrace 3',c:'Strata Terrace House · multi-level',ft:1496,m:139,f:'fp-terrace-3',st:'Block #68'}
+ {g:'t',t:'Terrace 1',c:'5-Bedroom Strata Terrace House',ft:1496,m:139,f:'fp-terrace-1',st:'Block #72'},
+ {g:'t',t:'Terrace 2',c:'5-Bedroom Strata Terrace House',ft:1496,m:139,f:'fp-terrace-2',st:'Block #70'},
+ {g:'t',t:'Terrace 3',c:'5-Bedroom Strata Terrace House',ft:1496,m:139,f:'fp-terrace-3',st:'Block #68'}
 ];
 var GLAB={'2':'2 Bedroom','3':'3 Bedroom','4':'4 Bedroom','t':'Strata Terrace'};
 function renderFP(filter){
@@ -630,6 +702,12 @@ document.getElementById('lbprev').addEventListener('click',function(e){e.stopPro
 document.getElementById('lbx').addEventListener('click',closeLB);
 lb.addEventListener('click',function(e){if(e.target===lb)closeLB();});
 document.addEventListener('keydown',function(e){if(!lb.classList.contains('open'))return;if(e.key==='Escape')closeLB();if(e.key==='ArrowRight')lbStep(1);if(e.key==='ArrowLeft')lbStep(-1);});
+
+/* ---- priority bar: measure height for layout offset + dismiss ---- */
+var pbar=document.getElementById('pbar');
+function syncPbar(){document.documentElement.style.setProperty('--pbh',(pbar?pbar.offsetHeight:0)+'px');}
+function dismissPbar(){if(pbar)pbar.style.display='none';document.documentElement.style.setProperty('--pbh','0px');}
+if(pbar){syncPbar();window.addEventListener('resize',syncPbar);window.addEventListener('load',syncPbar);}
 
 /* ---- nav: solid on scroll, mobile menu ---- */
 var bar=document.getElementById('bar');
