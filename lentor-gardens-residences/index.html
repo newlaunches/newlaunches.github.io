@@ -53,7 +53,7 @@ a{color:inherit;text-decoration:none}
 .sec{padding:96px 0 80px}
 
 /* HERO / overview */
-.hero{position:relative;min-height:100vh;display:flex;align-items:center;color:#fff;overflow:hidden;padding:100px 0 60px}
+.hero{position:relative;min-height:100vh;display:flex;align-items:center;color:#fff;overflow:hidden;padding:96px 0 110px}
 .hero::before{content:"";position:absolute;inset:0;z-index:-3;background:linear-gradient(155deg,#1f3329 0%,#15241d 45%,#14110b 100%)}
 .hero::after{content:"";position:absolute;inset:0;z-index:-1;background:
   radial-gradient(820px 480px at 78% 12%,rgba(210,171,99,.30),transparent 58%),
@@ -113,7 +113,9 @@ a{color:inherit;text-decoration:none}
 @keyframes shim{0%{left:-65%}55%,100%{left:135%}}
 .gico{font-size:24px;opacity:.85;margin-bottom:6px}.gtile span{position:relative;z-index:2}
 .herobg{position:absolute;inset:0;z-index:-4;background-size:cover;background-position:center 40%}
-.hero.has-img::before{background:linear-gradient(175deg,rgba(15,24,19,.46),rgba(17,20,13,.74) 64%,rgba(20,17,11,.97))}
+.hero.has-img::before{background:linear-gradient(180deg,rgba(8,14,10,.52) 0%,rgba(8,14,10,.16) 16%,rgba(8,14,10,.04) 42%,rgba(8,14,10,.30) 70%,rgba(10,12,8,.86) 100%)}
+.hero.has-img h1,.hero.has-img .tag,.hero.has-img .eyebrow{text-shadow:0 2px 26px rgba(0,0,0,.6),0 1px 5px rgba(0,0,0,.55)}
+.hero.has-img .sv,.hero.has-img .sk{text-shadow:0 1px 8px rgba(0,0,0,.6)}
 .hero.has-img .skyline,.hero.has-img .contour{display:none}
 .gal-feat img,.gtile img{position:absolute;inset:0;width:100%;height:100%;object-fit:cover;z-index:1}
 .gtile.hasimg::before,.gal-feat.hasimg::before{display:none}
@@ -163,7 +165,7 @@ a{color:inherit;text-decoration:none}
 /* priority release */
 .pri-tab .pdot{display:inline-block;width:7px;height:7px;border-radius:50%;background:#e0563f;margin-right:6px;animation:pl2 1.5s infinite;vertical-align:middle}
 @keyframes pl2{0%,100%{opacity:1}50%{opacity:.25}}
-.pribar{display:flex;align-items:center;justify-content:center;gap:16px;flex-wrap:wrap;background:linear-gradient(100deg,#7d1d11,#a9802f 88%);color:#fff;padding:17px 24px;cursor:pointer;text-align:center;box-shadow:inset 0 1px 0 rgba(255,255,255,.12);transition:.2s}
+.pribar{position:absolute;left:0;right:0;bottom:0;z-index:6;display:flex;align-items:center;justify-content:center;gap:16px;flex-wrap:wrap;background:linear-gradient(100deg,#7d1d11,#a9802f 88%);color:#fff;padding:15px 24px;cursor:pointer;text-align:center;box-shadow:0 -8px 30px rgba(0,0,0,.3);transition:.2s}
 .pribar:hover{filter:brightness(1.07)}
 .pribar .ptag{display:inline-flex;align-items:center;gap:8px;background:rgba(255,255,255,.16);border:1px solid rgba(255,255,255,.4);border-radius:30px;padding:6px 14px;font-size:11.5px;font-weight:800;letter-spacing:.06em;text-transform:uppercase;white-space:nowrap}
 .pribar .ptxt{font-size:14.5px;font-weight:600;color:#fbeede}.pribar .ptxt b{color:#fff}
@@ -197,6 +199,7 @@ footer b{color:#bcae97}
   .resgrid .gal-feat{order:-1}
 }
 </style>
+<style>.herobg{background-image:url(hero.jpg)}@media(max-width:760px){.herobg{background-image:url(hero-m.jpg);background-position:center 45%}}</style>
 </head>
 <body>
 
@@ -216,7 +219,7 @@ footer b{color:#bcae97}
 <!-- OVERVIEW -->
 <section class="panel on" id="t-overview">
   <div class="hero has-img">
-    <div class="herobg" style="background-image:url(hero.jpg)"></div>
+    <div class="herobg"></div>
     <div class="contour"></div>
     <svg class="skyline" viewBox="0 0 1200 230" preserveAspectRatio="xMidYMax slice" aria-hidden="true">
       <defs><linearGradient id="glow" x1="0" y1="0" x2="0" y2="1"><stop offset="0" stop-color="#d2ab63" stop-opacity=".22"/><stop offset="1" stop-color="#d2ab63" stop-opacity="0"/></linearGradient></defs>
@@ -250,12 +253,11 @@ footer b{color:#bcae97}
       <div class="book"><span class="pulse"></span>VVIP Preview · <b style="color:#fff;margin:0 3px">4 July 2026</b> · <span id="cd"></span></div>
       <div style="margin-top:8px;font-size:12.5px;color:#bcae97;font-weight:600">Public Booking Day · 18 July 2026</div>
     </div>
-    <div class="scrollcue">Why Lentor ↓</div>
-  </div>
-  <a class="pribar" onclick="tab('priority')">
+    <a class="pribar" onclick="tab('priority')">
         <span class="ptag"><span class="pulse"></span>⚡ Priority Release</span>
         <span class="ptxt"><b>6 rare units</b> released before Booking Day — commercial shops &amp; strata landed</span>
         <span class="pgo">See the units →</span></a>
+  </div>
   <div class="vstrip"><div class="wrap" style="padding:0"><div class="vps"><div class="vp"><div class="vpi">📉</div><div class="vpt">Cheapest land in the Lentor cycle</div><div class="vpx">Built on a $920 psf ppr site — the lowest land cost of all seven Lentor launches. Nearby projects already resell at $2,200–2,900 psf.</div></div><div class="vp"><div class="vpi">🚆</div><div class="vpt">5 minutes to Lentor MRT</div><div class="vpx">Thomson–East Coast Line (TE5) on your doorstep — direct to Orchard, Marina Bay and the future Founders&#x27; Memorial.</div></div><div class="vp"><div class="vpi">🌳</div><div class="vpt">Wrapped in green</div><div class="vpx">Lentor Hillock Park opens right at your door, with Thomson Nature Park and the Central Catchment Reserve close by.</div></div><div class="vp"><div class="vpi">🎓</div><div class="vpt">Schools at the doorstep</div><div class="vpx">CHIJ St Nicholas Girls&#x27;, Anderson Primary, Presbyterian High and Mayflower Primary all within reach.</div></div></div></div></div>
   <div class="wrap" style="padding:46px 26px 70px"><p class="serif" style="font-size:24px;line-height:1.55;text-align:center;max-width:50ch;margin:0 auto;color:var(--ink)">Lentor has quietly become one of Singapore&#x27;s most sought-after new private estates — seven launches, consistently strong take-up, and resale already climbing well past launch prices. Lentor Gardens Residences is the latest chapter: a 499-home development by Kingsford, minutes on foot from Lentor MRT, wrapped in parks and reputable schools — and sitting on the most keenly-priced land of the entire Lentor cycle.</p></div>
 </section>
@@ -292,7 +294,7 @@ footer b{color:#bcae97}
     <div class="phead"><div class="eyebrow">The development</div><h2 class="serif">499 homes by Kingsford</h2>
       <p>4 blocks · three 16-storey towers + one 8-storey block · ≈ 222,000 sqft site.</p></div>
     <div class="resgrid">
-      <div class="gal-feat hasimg"><img src="hero.jpg" alt="Lentor Gardens Residences" loading="lazy"></div>
+      <div class="gal-feat hasimg"><img src="aerial.jpg" alt="Lentor Gardens Residences" loading="lazy"></div>
       <div>
         <div class="eyebrow" style="color:var(--ink2)">Facilities</div>
         <div class="chips"><span class="chip">50m lap pool</span><span class="chip">Fully-equipped gym</span><span class="chip">Childcare centre</span><span class="chip">3 retail shops</span><span class="chip">Lush landscaped grounds</span><span class="chip">Sky &amp; social spaces</span></div>
