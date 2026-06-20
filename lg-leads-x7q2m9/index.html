@@ -42,8 +42,14 @@ input{width:100%;background:rgba(0,0,0,.3);border:1px solid var(--line);border-r
 input:focus{outline:0;border-color:var(--gold)}
 .gatebox .btn{width:100%;margin-top:12px;padding:15px}
 .err{color:#ff9b8a;font-size:13px;margin-top:8px;min-height:18px}
-.installlink{display:inline-flex;align-items:center;gap:7px;margin-top:22px;font-size:13px;font-weight:700;color:var(--gold);cursor:pointer;border:0;background:none;font-family:inherit}
-.installlink:hover{text-decoration:underline}
+.installcard{display:flex;align-items:center;gap:13px;width:100%;margin-top:22px;background:linear-gradient(135deg,rgba(216,184,120,.2),rgba(216,184,120,.07));border:1px solid rgba(216,184,120,.5);border-radius:16px;padding:15px 16px;cursor:pointer;font-family:inherit;text-align:left;color:var(--cream);transition:.18s;animation:ipulse 2.6s ease-in-out infinite}
+.installcard:hover{transform:translateY(-1px);border-color:var(--gold);background:linear-gradient(135deg,rgba(216,184,120,.28),rgba(216,184,120,.1))}
+.installcard .ic-emoji{font-size:25px;flex:none}
+.installcard .ic-txt{flex:1;display:flex;flex-direction:column;line-height:1.2}
+.installcard .ic-txt b{font-size:14.5px;color:#fff}
+.installcard .ic-txt small{font-size:12px;color:#cabfa9;margin-top:2px}
+.installcard .ic-arrow{color:var(--gold);font-weight:800;font-size:18px}
+@keyframes ipulse{0%,100%{box-shadow:0 0 0 0 rgba(216,184,120,0)}50%{box-shadow:0 0 0 5px rgba(216,184,120,.12)}}
 
 /* DASHBOARD */
 .top{display:flex;align-items:center;gap:14px;flex-wrap:wrap;margin-bottom:24px}
@@ -120,7 +126,11 @@ td.del{text-align:right;width:1%}
     <input id="pwin" type="password" inputmode="numeric" placeholder="Password" autocomplete="off">
     <button class="btn" id="unlock">Unlock →</button>
     <div class="err" id="gateerr"></div>
-    <button class="installlink" id="installLink">📲 Add to your phone as an app</button>
+    <button class="installcard" id="installLink">
+      <span class="ic-emoji">📲</span>
+      <span class="ic-txt"><b>Install on your phone</b><small>Get it as an app — tap for the 10-sec guide</small></span>
+      <span class="ic-arrow">→</span>
+    </button>
   </div>
 </div>
 
@@ -135,7 +145,7 @@ td.del{text-align:right;width:1%}
     <div class="actions">
       <button class="btn ghost" id="refresh">↻ Refresh</button>
       <button class="btn ghost" id="csv">⬇ CSV</button>
-      <button class="btn ghost" id="installBtn">📲 Install</button>
+      <button class="btn" id="installBtn">📲 Install app</button>
       <button class="btn ghost" id="signout">Lock</button>
     </div>
   </div>
@@ -282,9 +292,12 @@ document.getElementById('guideClose').addEventListener('click',function(){guide.
 document.getElementById('guideGot').addEventListener('click',function(){guide.classList.remove('open');});
 guide.addEventListener('click',function(e){if(e.target===guide)guide.classList.remove('open');});
 
-/* hide the install prompts once it's already installed as an app */
-if(window.matchMedia&&window.matchMedia('(display-mode: standalone)').matches){
+/* once installed as an app, hide the prompts; otherwise pop the guide on first visit */
+var standalone=(window.matchMedia&&window.matchMedia('(display-mode: standalone)').matches)||window.navigator.standalone;
+if(standalone){
   ['installLink','installLink2','installBtn'].forEach(function(id){var el=document.getElementById(id);if(el)el.classList.add('hidden');});
+}else if(!localStorage.getItem('lg_guide_seen')){
+  openGuide();localStorage.setItem('lg_guide_seen','1');
 }
 
 var saved=localStorage.getItem(PW_STORE);
